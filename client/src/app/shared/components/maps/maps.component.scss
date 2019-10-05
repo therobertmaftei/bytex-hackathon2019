@@ -1,0 +1,11 @@
+:host {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+}
+
+agm-map {
+  height: 100%;
+  width: 100%;
+  display: block;
+}

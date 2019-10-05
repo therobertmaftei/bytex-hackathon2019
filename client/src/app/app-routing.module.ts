@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { CoreComponent } from '@core/core.component';
 import { AppReadyResolver } from '@core/resolvers';
 import { LoginComponent, LogoutComponent } from '@session/pages';
+import { SharedMapsComponent } from '@shared/components';
 // import { IsAuthenticatedGuard } from '@session/guards';
 
 const routes: Routes = [
@@ -22,15 +23,15 @@ const routes: Routes = [
     component: LogoutComponent
   },
   {
+    path: 'test',
+    component: SharedMapsComponent
+  },
+  {
     path: '',
     component: CoreComponent,
     resolve: {
       appReady: AppReadyResolver
     }
-    // canActivateChild: [IsAuthenticatedGuard],
-    // children: [
-    //
-    // ]
   },
   {
     path: '**',

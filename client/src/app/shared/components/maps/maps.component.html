@@ -1,0 +1,10 @@
+<agm-map *ngIf="map"
+         [latitude]="map.location.latitude"
+         [longitude]="map.location.longitude"
+         [zoom]="map.location.zoom">
+  <agm-marker [latitude]="marker.latitude"
+              [longitude]="marker.longitude"
+              *ngFor="let marker of map.markers">
+    <agm-info-window [maxWidth]="300">{{ marker.details }}</agm-info-window>
+  </agm-marker>
+</agm-map>

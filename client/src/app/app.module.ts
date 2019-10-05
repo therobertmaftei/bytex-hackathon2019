@@ -15,6 +15,7 @@ import { SdkModule } from '@sdk/sdk.module';
 import { SessionModule } from '@session/session.module';
 import { translateConfig } from '@shared/libs';
 
+import { AgmCoreModule } from '@agm/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
