@@ -35,9 +35,10 @@ const routes: Routes = [
   {
     path: '',
     component: CoreComponent
-    // resolve: {
-    //   appReady: AppReadyResolver
-    // }
+  },
+  {
+    path: ROUTES.REPORTS.url,
+    loadChildren: () => import('./reports/reports.module').then(m => m.ReportsModule)
   },
   {
     path: '**',

@@ -22,9 +22,11 @@
       "@assets/*": ["src/assets/*"],
       "@core/*": ["src/app/core/*"],
       "@environment": ["src/environments/environment.ts"],
+      "@reports/*": ["src/app/reports/*"],
       "@sdk/*": ["src/app/sdk/*"],
       "@session/*": ["src/app/session/*"],
       "@shared/*": ["src/app/shared/*"],
+      "@smart/*": ["src/app/smart/*"],
       "@template/*": ["src/app/template/*"],
       "@ui/*": ["src/app/ui/*"]
     }

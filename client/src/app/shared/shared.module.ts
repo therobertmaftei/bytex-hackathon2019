@@ -11,6 +11,7 @@ import {
 } from '@shared/components';
 import { BaseComponent } from '@shared/containers';
 import { RoutePipe } from '@shared/pipes';
+import { HTTPService } from '@shared/services';
 import { UIModule } from '@ui/ui.module';
 
 @NgModule({
@@ -43,7 +44,8 @@ import { UIModule } from '@ui/ui.module';
     UIModule
   ],
   providers: [
-    MatSnackBar
+    MatSnackBar,
+    HTTPService
   ]
 })
 export class SharedModule { }

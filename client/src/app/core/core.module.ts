@@ -18,9 +18,9 @@ import { SharedModule } from '@shared/shared.module';
     CoreComponent,
     FooterComponent,
     HeaderComponent,
+    HelpComponent,
     LandingComponent,
-    SidebarComponent,
-    HelpComponent
+    SidebarComponent
   ],
   imports: [
     RouterModule,

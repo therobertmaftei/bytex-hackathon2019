@@ -1,6 +1,7 @@
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
@@ -11,11 +12,11 @@ import { CoreModule } from '@core/core.module';
 import { ApiInterceptor } from '@core/services';
 import { coreEffects, coreReducer } from '@core/store';
 import { environment } from '@environment';
+import { ReportsModule } from '@reports/reports.module';
 import { SdkModule } from '@sdk/sdk.module';
 import { SessionModule } from '@session/session.module';
 import { translateConfig } from '@shared/libs';
 
-import { AgmCoreModule } from '@agm/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
@@ -24,15 +25,16 @@ import { AppComponent } from './app.component';
     AppComponent
   ],
   imports: [
-    EffectsModule.forRoot(coreEffects),
-    StoreModule.forRoot({ core: coreReducer }),
-    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
     AppRoutingModule,
     BrowserAnimationsModule,
     CoreModule,
+    EffectsModule.forRoot(coreEffects),
     HttpClientModule,
+    ReportsModule,
     SdkModule,
     SessionModule,
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
+    StoreModule.forRoot({ core: coreReducer }),
     TranslateModule.forRoot(translateConfig)
   ],
   providers: [
