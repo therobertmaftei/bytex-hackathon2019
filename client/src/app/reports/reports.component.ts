@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  template: `<router-outlet></router-outlet>`
+  templateUrl: './reports.component.html',
+  styleUrls: ['./reports.component.scss']
 })
 export class ReportsComponent { }

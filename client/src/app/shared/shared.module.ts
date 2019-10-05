@@ -6,6 +6,7 @@ import { MatButtonToggleModule, MatMenuModule, MatSnackBar } from '@angular/mate
 import { TranslateModule } from '@ngx-translate/core';
 
 import {
+  LoadingDotsComponent,
   SharedMapsComponent,
   SvgIconComponent
 } from '@shared/components';
@@ -17,6 +18,7 @@ import { UIModule } from '@ui/ui.module';
 @NgModule({
   declarations: [
     BaseComponent,
+    LoadingDotsComponent,
     RoutePipe,
     SharedMapsComponent,
     SvgIconComponent
@@ -37,6 +39,7 @@ import { UIModule } from '@ui/ui.module';
     BaseComponent,
     CommonModule,
     FormsModule,
+    LoadingDotsComponent,
     ReactiveFormsModule,
     RoutePipe,
     SharedMapsComponent,

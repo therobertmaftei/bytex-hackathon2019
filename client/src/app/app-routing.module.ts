@@ -6,7 +6,6 @@ import { LandingComponent } from '@core/containers';
 import { CoreComponent } from '@core/core.component';
 import { AppReadyResolver } from '@core/resolvers';
 import { LoginComponent, LogoutComponent } from '@session/pages';
-import { SharedMapsComponent } from '@shared/components';
 // import { IsAuthenticatedGuard } from '@session/guards';
 
 const routes: Routes = [
@@ -29,16 +28,14 @@ const routes: Routes = [
     component: LogoutComponent
   },
   {
-    path: 'test',
-    component: SharedMapsComponent
-  },
-  {
     path: '',
-    component: CoreComponent
-  },
-  {
-    path: ROUTES.REPORTS.url,
-    loadChildren: () => import('./reports/reports.module').then(m => m.ReportsModule)
+    component: CoreComponent,
+    children: [
+      {
+        path: ROUTES.REPORTS.url,
+        loadChildren: () => import('./reports/reports.module').then(m => m.ReportsModule)
+      }
+    ]
   },
   {
     path: '**',

@@ -11,7 +11,8 @@ export const initialState: IState = {
   reports: fromJS({
     message: [],
     data: null,
-    success: false
+    success: false,
+    loading: false
   }),
   location: null
 };

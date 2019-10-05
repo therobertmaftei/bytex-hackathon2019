@@ -8,3 +8,11 @@ body {
   min-width: size(dimension, 1200);
   flex: 1;
 }
+
+.container {
+  @extend %flex-row;
+  height: 100%;
+  background-color: color(primary-lighter-x);
+  border-radius: size(dimension, 10);
+  overflow: hidden;
+}

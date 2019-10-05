@@ -1,7 +1,6 @@
 <section class="pages">
-  <a [class.active]="item.active"
-     (click)="switchPage(item)"
-     [routerLink]="item.route"
+  <a [class.active]="isMenuItemActive(item.route)"
+     [routerLink]="item.route | route"
      queryParamsHandling="preserve"
      *ngFor="let item of navigationItems">
     <shared-svg-icon [icon]="item.icon" [size]="item.iconSize"></shared-svg-icon>
