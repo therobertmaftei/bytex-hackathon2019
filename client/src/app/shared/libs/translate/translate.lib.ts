@@ -10,7 +10,7 @@ export const translateConfig = {
   loader: {
     provide: TranslateLoader,
     useFactory: HttpLoaderFactory,
-    deps: [HttpClient],
+    deps: [HttpClient]
   },
-  isolate: false,
+  isolate: false
 };

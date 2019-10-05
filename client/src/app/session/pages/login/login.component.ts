@@ -8,20 +8,19 @@ import { BaseComponent } from '@shared/containers';
 
 @Component({
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss'],
+  styleUrls: ['./login.component.scss']
 })
 export class LoginComponent extends BaseComponent implements OnInit {
   constructor(
     private store$: Store<IState>,
     private auth: AuthenticationService,
-    private formBuilder: FormBuilder,
+    private formBuilder: FormBuilder
   ) {
     super();
   }
 
   public ngOnInit(): void {
     super.ngOnInit();
-
   }
 
   public login(): void {

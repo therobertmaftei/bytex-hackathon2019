@@ -1,1 +1,1 @@
-# hackaton2019-haters
+# Smart City - Bytex Hackathon 2019

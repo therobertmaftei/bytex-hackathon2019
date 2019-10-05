@@ -8,19 +8,18 @@ import { IState as ICoreState } from '@core/store/reducer';
 import { IRecord, IStore } from '@shared/models';
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
 export class AppReadyResolver implements Resolve<boolean> {
-  constructor(private store$: Store<IStore>) {
-  }
+  constructor(private store$: Store<IStore>) { }
 
   public resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> | boolean {
     return this.store$
-               .pipe(
-                 select('core'),
-                 map((store: IRecord<ICoreState>) => store.get('isAppReadyToRender')),
-                 filter((isAppReadyToRender: boolean) => isAppReadyToRender),
-                 take(1),
-               );
+      .pipe(
+        select('core'),
+        map((store: IRecord<ICoreState>) => store.get('isAppReadyToRender')),
+        filter((isAppReadyToRender: boolean) => isAppReadyToRender),
+        take(1)
+      );
   }
 }

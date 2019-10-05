@@ -4,10 +4,9 @@ import { BaseComponent } from '@shared/containers';
 
 @Component({
   templateUrl: './core.component.html',
-  styleUrls: ['./core.component.scss'],
+  styleUrls: ['./core.component.scss']
 })
 export class CoreComponent extends BaseComponent implements OnInit {
-
   constructor() {
     super();
   }

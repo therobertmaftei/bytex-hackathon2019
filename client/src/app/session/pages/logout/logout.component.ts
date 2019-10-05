@@ -5,7 +5,7 @@ import { IState } from '@session/store/reducer';
 
 @Component({
   templateUrl: './logout.component.html',
-  styleUrls: ['./logout.component.scss'],
+  styleUrls: ['./logout.component.scss']
 })
 export class LogoutComponent implements OnInit {
   constructor(private store$: Store<IState>) {

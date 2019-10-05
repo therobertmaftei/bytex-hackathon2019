@@ -28,28 +28,28 @@ export class ActionCreator<E = never, L = never, C = never, F = never> {
   public dispatchLoading(payload?: L): IActionCreator<L> {
     return {
       type: this.loading(),
-      payload,
+      payload
     };
   }
 
   public dispatchFailed(payload?: F): IActionCreator<F> {
     return {
       type: this.failed(),
-      payload,
+      payload
     };
   }
 
   public dispatchComplete(payload?: C): IActionCreator<C> {
     return {
       type: this.complete(),
-      payload,
+      payload
     };
   }
 
   public dispatchEvent(payload?: E): IActionCreator<E> {
     return {
       type: this.type,
-      payload,
+      payload
     };
   }
 }

@@ -3,5 +3,5 @@ export interface IState {
 }
 
 export const initialState: IState = {
-  isAppReadyToRender: false,
+  isAppReadyToRender: false
 };

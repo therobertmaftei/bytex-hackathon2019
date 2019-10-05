@@ -11,18 +11,17 @@ import { SharedModule } from '@shared/shared.module';
 @NgModule({
   declarations: [
     LoginComponent,
-    LogoutComponent,
+    LogoutComponent
   ],
   imports: [
     EffectsModule.forFeature(sessionEffects),
     SharedModule,
     StoreModule.forFeature('session', sessionReducer),
-    TranslateModule.forChild(translateConfig),
+    TranslateModule.forChild(translateConfig)
   ],
   exports: [
     LoginComponent,
-    LogoutComponent,
-  ],
+    LogoutComponent
+  ]
 })
-export class SessionModule {
-}
+export class SessionModule { }

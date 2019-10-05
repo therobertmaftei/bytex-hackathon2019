@@ -24,6 +24,7 @@
             "tsConfig": "tsconfig.app.json",
             "showCircularDependencies": true,
             "preserveSymlinks": true,
+            "aot": true,
             "assets": [
               "src/favicon.ico",
               {
@@ -87,7 +88,7 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "ngrx-arch:build",
+            "browserTarget": "ngrx-arch:build"
           },
           "configurations": {
             "production": {

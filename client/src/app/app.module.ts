@@ -20,7 +20,7 @@ import { AppComponent } from './app.component';
 
 @NgModule({
   declarations: [
-    AppComponent,
+    AppComponent
   ],
   imports: [
     EffectsModule.forRoot(coreEffects),
@@ -32,17 +32,16 @@ import { AppComponent } from './app.component';
     HttpClientModule,
     SdkModule,
     SessionModule,
-    TranslateModule.forRoot(translateConfig),
+    TranslateModule.forRoot(translateConfig)
   ],
   providers: [
     CookieService,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: ApiInterceptor,
-      multi: true,
-    },
+      multi: true
+    }
   ],
-  bootstrap: [AppComponent],
+  bootstrap: [AppComponent]
 })
-export class AppModule {
-}
+export class AppModule { }

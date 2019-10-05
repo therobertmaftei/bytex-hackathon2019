@@ -14,17 +14,16 @@ import { BaseComponent } from '@shared/containers';
     MatButtonToggleModule,
     MatMenuModule,
     ReactiveFormsModule,
-    TranslateModule,
+    TranslateModule
   ],
   exports: [
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    BaseComponent,
+    BaseComponent
   ],
   providers: [
-    MatSnackBar,
-  ],
+    MatSnackBar
+  ]
 })
-export class SharedModule {
-}
+export class SharedModule { }

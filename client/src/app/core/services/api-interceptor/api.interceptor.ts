@@ -7,11 +7,12 @@ import { AuthenticationService } from '@session/services';
 
 @Injectable()
 export class ApiInterceptor implements HttpInterceptor {
-  constructor(private auth: AuthenticationService) {
-  }
+  constructor(private auth: AuthenticationService) { }
 
   public intercept(
-    req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+    req: HttpRequest<any>,
+    next: HttpHandler
+  ): Observable<HttpEvent<any>> {
     return next.handle(this.authorizeRequest(req)).pipe(
       map((response: HttpResponse<any>) => {
         return response;
@@ -25,14 +26,14 @@ export class ApiInterceptor implements HttpInterceptor {
         }
 
         return throwError([]);
-      }),
+      })
     );
   }
 
   public authorizeRequest(req: HttpRequest<any>) {
     const setHeaders = {
       Accept: 'application/json, text/plain, */*',
-      'Content-Type': 'application/json;charset=UTF-8',
+      'Content-Type': 'application/json;charset=UTF-8'
     };
 
     return req.clone({ setHeaders });

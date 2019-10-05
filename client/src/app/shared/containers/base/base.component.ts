@@ -2,7 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 
 @Component({
-  template: '',
+  template: ''
 })
 export class BaseComponent implements OnInit, OnDestroy {
   public isLoading: boolean = false;

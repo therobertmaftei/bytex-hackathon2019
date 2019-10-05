@@ -11,14 +11,13 @@ import { SharedModule } from '@shared/shared.module';
   declarations: [
     CoreComponent,
     FooterComponent,
-    HeaderComponent,
+    HeaderComponent
   ],
   imports: [
     RouterModule,
     SharedModule,
-    TranslateModule.forChild(translateConfig),
+    TranslateModule.forChild(translateConfig)
   ],
-  exports: [CoreComponent],
+  exports: [CoreComponent]
 })
-export class CoreModule {
-}
+export class CoreModule { }

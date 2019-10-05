@@ -10,23 +10,23 @@ const routes: Routes = [
   {
     path: 'login',
     resolve: {
-      appReady: AppReadyResolver,
+      appReady: AppReadyResolver
     },
-    component: LoginComponent,
+    component: LoginComponent
   },
   {
     path: 'logout',
     resolve: {
-      appReady: AppReadyResolver,
+      appReady: AppReadyResolver
     },
-    component: LogoutComponent,
+    component: LogoutComponent
   },
   {
     path: '',
     component: CoreComponent,
     resolve: {
-      appReady: AppReadyResolver,
-    },
+      appReady: AppReadyResolver
+    }
     // canActivateChild: [IsAuthenticatedGuard],
     // children: [
     //
@@ -35,13 +35,12 @@ const routes: Routes = [
   {
     path: '**',
     redirectTo: '/',
-    pathMatch: 'full',
-  },
+    pathMatch: 'full'
+  }
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule],
+  exports: [RouterModule]
 })
-export class AppRoutingModule {
-}
+export class AppRoutingModule { }

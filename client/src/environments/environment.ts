@@ -4,7 +4,7 @@
 
 export const environment = {
   hmr: false,
-  production: false,
+  production: false
 };
 
 /*
