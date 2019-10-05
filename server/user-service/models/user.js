@@ -7,6 +7,21 @@ const userSchema = new Schema({
   password: {
     type: String,
   },
+  firstname: {
+    type: String,
+  },
+  lastname: {
+    type: String,
+  },
+  profilePicture: {
+    type: String,
+  },
+  createdAt: {
+    type: Date
+  },
+  updatedAt: {
+    type: Date
+  }
 });
 
 module.exports = model('users', userSchema);

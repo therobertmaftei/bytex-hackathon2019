@@ -1,4 +1,5 @@
 const HttpStatus = require('http-status-codes');
+const { insideCircle } = require('geolocation-utils');
 const { decodeTkn, getEvenToken, constants } = require('../utils');
 const { idClaim } = constants;
 
@@ -27,14 +28,15 @@ exports.setDatabase = db => {
   };
 };
 
-exports.requireAuth = () => {
-  const skipPaths = ['/auth/register', '/auth/login'];
-
+exports.setTransporter = transporter => {
   return (req, res, next) => {
-    if (skipPaths.includes(req.path)) {
-      return next();
-    }
+    req.transporter = transporter;
+    next();
+  };
+};
 
+exports.requireAuth = () => {
+  return (req, res, next) => {
     try {
       const token = getEvenToken(req);
 
@@ -61,5 +63,36 @@ exports.requireAuth = () => {
         success: false,
       });
     }
+  };
+};
+
+exports.checkLocation = () => {
+  return (req, res, next) => {
+    const { lat, lng } = req.query;
+
+    if (!lat || !lng) {
+      return res.status(HttpStatus.BAD_REQUEST).json({
+        success: false,
+        message: ['lat and lon query params must be set'],
+      });
+    }
+
+    const isInside = insideCircle(
+      { lat: parseFloat(lat), lon: parseFloat(lng) },
+      {
+        lat: parseFloat(req.config.SERVER_LAT),
+        lon: parseFloat(req.config.SERVER_LNG),
+      },
+      parseInt(req.config.SERVER_RADIUS)
+    );
+
+    if (!isInside) {
+      return res.status(HttpStatus.NOT_ACCEPTABLE).json({
+        success: false,
+        message: ['Not inside the range'],
+      });
+    }
+
+    return next()
   };
 };

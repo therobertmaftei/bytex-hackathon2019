@@ -7,7 +7,8 @@ const morgan = require('morgan');
 const HttpStatus = require('http-status-codes');
 const dotenv = require('dotenv');
 const mongoose = require('mongoose');
-const helmet = require('helmet')
+const helmet = require('helmet');
+const nodemailer = require('nodemailer');
 
 const path = require('path');
 const rfs = require('rotating-file-stream');
@@ -20,6 +21,7 @@ const {
   setConfig,
   setDatabase,
   requireAuth,
+  setTransporter,
 } = require('./middlewares');
 const models = require('./models');
 const router = require('./routes');
@@ -44,13 +46,21 @@ const logger = winston.createLogger({
 // create a rotating write streamxw
 const logStream = rfs('access_logs.log', {
   interval: '1d',
-  path: path.join(__dirname, 'logs', 'access')
+  path: path.join(__dirname, 'logs', 'access'),
 });
 
 const PORT = process.env.NODE_ENV === 'prod' ? 80 : 3000;
 const config = dotenv.config({
   path: path.join(__dirname, 'vars', `${process.env.NODE_ENV}.env`),
 }).parsed;
+
+const transporter = nodemailer.createTransport({
+  service: 'gmail',
+  auth: {
+    user: config.GMAIL_USER,
+    pass: config.GMAIL_PASS,
+  },
+});
 
 const app = express();
 
@@ -65,15 +75,16 @@ mongoose
 
 // Middlewares
 app.use(cors());
-app.use(helmet())
+app.use(helmet());
 app.use(bodyParser.json());
 app.use(compression());
 app.use(morgan('tiny', { stream: logStream }));
 app.use(setLogger(logger));
 app.use(setConfig(config));
 app.use(setDatabase(models));
-app.use(requireAuth())
-app.use('/', router);
+app.use(setTransporter(transporter));
+app.use(requireAuth());
+app.use('/users', router);
 
 // 404
 app.use((req, res, next) => {
@@ -88,4 +99,4 @@ app.use((error, req, res, next) => {
   return res.status(HttpStatus.INTERNAL_SERVER_ERROR).send({ error });
 });
 
-app.listen(PORT, () => console.log(`App is listening on ${PORT}`));
+app.listen(PORT, () => console.log(`User service is listening on ${PORT}`));

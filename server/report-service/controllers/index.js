@@ -1,0 +1,1 @@
+exports.reportsController = require('./reportsController');

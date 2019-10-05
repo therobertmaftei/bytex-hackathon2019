@@ -1,5 +1,7 @@
 const jwt = require('jsonwebtoken');
 
+exports.email = require('./email')
+
 const constants = require('./constants');
 exports.constants = constants;
 
