@@ -28,10 +28,10 @@ const routes: Routes = [
   },
   {
     path: '',
-    component: CoreComponent,
-    resolve: {
-      appReady: AppReadyResolver
-    }
+    component: CoreComponent
+    // resolve: {
+    //   appReady: AppReadyResolver
+    // }
   },
   {
     path: '**',

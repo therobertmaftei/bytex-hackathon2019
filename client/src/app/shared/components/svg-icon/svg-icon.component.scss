@@ -6,19 +6,19 @@
 
 svg {
   &.small {
-    @include generate-sizes(size(small, 3));
-  }
-
-  &.medium {
-    @include generate-sizes(size(small, 4));
-  }
-
-  &.big {
     @include generate-sizes(size(medium));
   }
 
-  &.large {
+  &.medium {
+    @include generate-sizes(size(medium, 2));
+  }
+
+  &.big {
     @include generate-sizes(size(medium, 4));
+  }
+
+  &.large {
+    @include generate-sizes(size(large, 2));
   }
 
   use {

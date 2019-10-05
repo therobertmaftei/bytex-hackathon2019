@@ -1,0 +1,47 @@
+@import 'global';
+
+:host {
+  @extend %flex-column-center-x;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  padding: size(medium, 3) 0;
+
+  & > * {
+    @extend %flex-column-center-x;
+    width: 100%;
+  }
+}
+
+.pages {
+  @include not-last-child(bottom);
+
+  & > * {
+    @extend %flex-column-center-xy;
+
+    &:not(:first-child) {
+      $border-radius: size(small, 3);
+      padding: size(medium, 3);
+      border-radius: 0 $border-radius $border-radius 0;
+
+      &:hover {
+        background-color: rgba(color(primary-lighter-x), .5);
+      }
+    }
+  }
+}
+
+.active {
+  background-color: color(primary-lighter-x);
+}
+
+.admin {
+  @include not-last-child(bottom, true, size(medium, 2));
+
+  & > * {
+    color: color(primary);
+  }
+}

@@ -21,4 +21,26 @@ export abstract class ROUTES {
       }
     }
   };
+
+  public static SMART: IRoute = {
+    url: 'smart',
+    children: {
+      HOME: {
+        url: 'home',
+        children: {
+          id: {
+            url: ':id'
+          }
+        }
+      },
+      CAR: {
+        url: 'car',
+        children: {
+          id: {
+            url: ':id'
+          }
+        }
+      }
+    }
+  };
 }

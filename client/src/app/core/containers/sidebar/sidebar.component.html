@@ -1,9 +1,24 @@
-<a [routerLink]="'DASHBOARD' | route"
-   queryParamsHandling="preserve">
-  <img src="" [alt]="appName">
-</a>
+<section class="pages">
+  <a [class.active]="item.active"
+     (click)="switchPage(item)"
+     [routerLink]="item.route"
+     queryParamsHandling="preserve"
+     *ngFor="let item of navigationItems">
+    <shared-svg-icon [icon]="item.icon" [size]="item.iconSize"></shared-svg-icon>
+    <h2 *ngIf="item.label">{{ item.label }}</h2>
+  </a>
+</section>
 
-<a [routerLink]="'DASHBOARD' | route"
-   queryParamsHandling="preserve">
-  <img src="" [alt]="appName">
-</a>
+<section class="admin">
+  <cd-button>
+    <button mat-icon-button>
+      <shared-svg-icon icon='gear' [size]="'medium'"></shared-svg-icon>
+    </button>
+  </cd-button>
+
+  <cd-button>
+    <button mat-icon-button>
+      <shared-svg-icon icon='gear' [size]="'medium'"></shared-svg-icon>
+    </button>
+  </cd-button>
+</section>
