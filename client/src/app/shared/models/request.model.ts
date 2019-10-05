@@ -3,3 +3,7 @@ export interface IRequest<T> {
   data?: T;
   message?: string[];
 }
+
+export interface IQueryParam {
+  [key: string]: string;
+}
