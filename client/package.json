@@ -3,7 +3,7 @@
   "version": "2.0.0",
   "scripts": {
     "ng": "ng",
-    "serve": "ng serve --aot",
+    "serve": "ng serve --aot --host 0.0.0.0",
     "serve:hmr": "ng serve --configuration hmr",
     "prestart": "npm run build-sdk && npm run build-svgs",
     "start": "run-p watch-parse-i18n serve",

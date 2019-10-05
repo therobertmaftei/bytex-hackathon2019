@@ -1,6 +1,6 @@
 import { Component, Input, ViewEncapsulation } from '@angular/core';
 
-export type IconSizeType = 'small' | 'medium' | 'big' | number;
+export type IconSizeType = 'small' | 'medium' | 'big' | 'large' | 'extra-large' | number;
 
 @Component({
   selector: 'shared-svg-icon',

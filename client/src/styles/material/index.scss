@@ -10,7 +10,7 @@
 );
 
 $theme-primary: mat-palette($theme-palette);
-$theme-accent: mat-palette($theme-palette, A200, A100, A400);
+$theme-accent: mat-palette($theme-palette, A200);
 $theme-warn: mat-palette($mat-red);
 $theme: mat-light-theme($theme-primary, $theme-accent, $theme-warn);
 

@@ -1,0 +1,60 @@
+@import 'global';
+
+:host {
+  @extend %flex-column;
+  width: 100%;
+  position: relative;
+}
+
+header {
+  @extend %flex-row-center-y;
+  left: 0;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: fit-content;
+  margin: size(large, 2) size(large, 3) 0;
+  z-index: z-index(appBar);
+
+  & > :first-child {
+    @extend %flex-column-center-xy;
+    color: color(white);
+  }
+
+  .buttons {
+    @include not-last-child;
+  }
+}
+
+.screen {
+  &-landing {
+    @extend %flex-column-center-y;
+    height: 100vh;
+    position: relative;
+    padding: 0 size(large, 3);
+    background-image: url('/assets/images/landing-background.svg');
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+
+    .max-width {
+      @include not-last-child(bottom, true, size(large, 2));
+      @extend %flex-column;
+      max-width: size(dimension, 670);
+    }
+
+    .description {
+      font-size: size(font, 80);
+      font-weight: bold;
+      color: color(white);
+    }
+
+    .city {
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+      z-index: z-index(drawer);
+    }
+  }
+}

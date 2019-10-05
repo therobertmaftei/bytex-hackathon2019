@@ -21,6 +21,10 @@ svg {
     @include generate-sizes(size(large, 2));
   }
 
+  &.extra-large {
+    @include generate-sizes(size(large, 4));
+  }
+
   use {
     fill: currentColor
   }

@@ -2,7 +2,13 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 
-import { FooterComponent, HeaderComponent, SidebarComponent } from '@core/containers';
+import {
+  FooterComponent,
+  HeaderComponent,
+  LandingComponent,
+  SidebarComponent
+} from '@core/containers';
+import { HelpComponent } from '@core/containers/sidebar/components';
 import { CoreComponent } from '@core/core.component';
 import { translateConfig } from '@shared/libs';
 import { SharedModule } from '@shared/shared.module';
@@ -12,7 +18,9 @@ import { SharedModule } from '@shared/shared.module';
     CoreComponent,
     FooterComponent,
     HeaderComponent,
-    SidebarComponent
+    LandingComponent,
+    SidebarComponent,
+    HelpComponent
   ],
   imports: [
     RouterModule,

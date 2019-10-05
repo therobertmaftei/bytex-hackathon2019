@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
+import { MatDialog } from '@angular/material';
 
 import { INavigation } from '@core/models';
 import { RoutePath } from '@shared/libs';
+import { HelpComponent } from './components';
 
 @Component({
   selector: 'core-sidebar',
@@ -37,6 +39,8 @@ export class SidebarComponent {
     }
   ];
 
+  constructor(private dialog: MatDialog) { }
+
   public switchPage(navigationItem: INavigation): void {
     this.navigationItems.forEach((item: INavigation) => item.active = false);
     if (navigationItem.icon === 'logo') {
@@ -44,5 +48,11 @@ export class SidebarComponent {
     } else {
       navigationItem.active = true;
     }
+  }
+
+  public help(): void {
+    this.dialog.open(HelpComponent, {
+      autoFocus: false
+    });
   }
 }

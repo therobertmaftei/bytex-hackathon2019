@@ -1,6 +1,10 @@
 import { IRoute } from '@core/models';
 
 export abstract class ROUTES {
+  public static LANDING: IRoute = {
+    url: 'landing'
+  };
+
   public static LOGIN: IRoute = {
     url: 'login'
   };
