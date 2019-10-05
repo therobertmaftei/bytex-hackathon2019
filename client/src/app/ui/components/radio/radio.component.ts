@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { CandidElementCore } from '../core';
+import { ElementCore } from '../core';
 
 @Component({
   selector: 'cd-radio',
   templateUrl: './radio.component.html',
   styleUrls: ['./radio.component.scss']
 })
-export class CandidRadioComponent extends CandidElementCore { }
+export class RadioComponent extends ElementCore { }

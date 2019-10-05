@@ -3,22 +3,22 @@ import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 
 import {
-  CandidButtonComponent,
-  CandidCheckboxComponent,
-  CandidInputComponent,
-  CandidRadioComponent,
-  CandidSelectComponent,
-  CandidTableComponent
+  ButtonComponent,
+  CheckboxComponent,
+  InputComponent,
+  RadioComponent,
+  SelectComponent,
+  TableComponent
 } from '@ui/components';
 import { MaterialModule } from '@ui/material.module';
 
 const wrappers = [
-  CandidButtonComponent,
-  CandidCheckboxComponent,
-  CandidInputComponent,
-  CandidRadioComponent,
-  CandidSelectComponent,
-  CandidTableComponent
+  ButtonComponent,
+  CheckboxComponent,
+  InputComponent,
+  RadioComponent,
+  SelectComponent,
+  TableComponent
 ];
 
 @NgModule({
