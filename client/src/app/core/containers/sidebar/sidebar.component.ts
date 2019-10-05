@@ -8,5 +8,7 @@ import { BaseComponent } from '@shared/containers';
   styleUrls: ['./sidebar.component.scss']
 })
 export class SidebarComponent implements OnInit {
+  public readonly appName: string = 'city.ai';
+
   public ngOnInit(): void { }
 }

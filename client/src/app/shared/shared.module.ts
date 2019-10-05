@@ -5,7 +5,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonToggleModule, MatMenuModule, MatSnackBar } from '@angular/material';
 import { TranslateModule } from '@ngx-translate/core';
 
-import { SharedMapsComponent } from '@shared/components';
+import {
+  SharedMapsComponent,
+  SvgIconComponent
+} from '@shared/components';
 import { BaseComponent } from '@shared/containers';
 import { RoutePipe } from '@shared/pipes';
 import { UIModule } from '@ui/ui.module';
@@ -14,7 +17,8 @@ import { UIModule } from '@ui/ui.module';
   declarations: [
     BaseComponent,
     RoutePipe,
-    SharedMapsComponent
+    SharedMapsComponent,
+    SvgIconComponent
   ],
   imports: [
     AgmCoreModule.forRoot({
@@ -35,6 +39,7 @@ import { UIModule } from '@ui/ui.module';
     ReactiveFormsModule,
     RoutePipe,
     SharedMapsComponent,
+    SvgIconComponent,
     UIModule
   ],
   providers: [
