@@ -24,7 +24,6 @@
             "tsConfig": "tsconfig.app.json",
             "showCircularDependencies": true,
             "preserveSymlinks": true,
-            "aot": true,
             "assets": [
               "src/favicon.ico",
               {
