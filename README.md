@@ -1,1 +1,1 @@
-# bytex-hackathon2019
+# hackaton2019-haters

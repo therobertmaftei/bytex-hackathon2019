@@ -1,0 +1,11 @@
+@function small($size: 1) {
+  @return $size * 0.4rem;
+}
+
+@function medium($size: 1) {
+  @return $size * 8 + small(4);
+}
+
+@function large($size: 1) {
+  @return $size * 16 + medium(4);
+}

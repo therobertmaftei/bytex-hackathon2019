@@ -1,0 +1,32 @@
+$theme-palette: (
+  50: map-get($colors, white),
+  100: map-get($colors, white),
+  200: map-get($colors, white),
+  300: map-get($colors, white),
+  400: map-get($colors, white),
+  500: map-get($colors, white),
+  600: map-get($colors, white),
+  700: map-get($colors, white),
+  800: map-get($colors, white),
+  900: map-get($colors, white),
+  A100: map-get($colors, white),
+  A200: map-get($colors, white),
+  A400: map-get($colors, white),
+  A700: map-get($colors, white),
+  contrast: (
+    50: map-get($colors, white),
+    100: map-get($colors, white),
+    200: map-get($colors, white),
+    300: map-get($colors, white),
+    400: map-get($colors, white),
+    500: white,
+    600: white,
+    700: white,
+    800: map-get($colors, white),
+    900: map-get($colors, white),
+    A100: map-get($colors, white),
+    A200: white,
+    A400: white,
+    A700: white
+  )
+);

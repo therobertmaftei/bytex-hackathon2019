@@ -1,0 +1,10 @@
+::-webkit-scrollbar {
+  // Width & height
+  width: small();
+
+  // Handle
+  &-thumb {
+    background-color: grey;
+    border-radius: small();
+  }
+}
