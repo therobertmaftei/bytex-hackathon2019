@@ -1,1 +1,2 @@
-export { DEFAULTS } from './defaults';
+export * from './defaults.constant';
+export * from './routes.constant';
