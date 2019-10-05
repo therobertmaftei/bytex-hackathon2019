@@ -1,0 +1,6 @@
+/// The most common space between elements.
+///
+/// @returns a `rem` value.
+@function space-between-elements() {
+  @return size(small, 3);
+}

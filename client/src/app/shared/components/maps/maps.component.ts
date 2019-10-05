@@ -11,6 +11,13 @@ export interface ILocation {
 export interface IMarker extends ILocation {
   title: string;
   details: string;
+  icon: {
+    url: string;
+    scaledSize: {
+      width: number;
+      height: number;
+    }
+  };
 }
 
 export interface IMapOptions {
@@ -40,10 +47,6 @@ export class SharedMapsComponent implements OnInit {
     }).catch(() => {
       // this.loading = false;
     });
-  }
-
-  public rClickMap(event, action): void {
-    // this.menu.openMenu();
   }
 
   public addItem(event: any): void {

@@ -1,0 +1,44 @@
+@import 'global';
+
+:host {
+  display: block;
+  line-height: 1;
+
+  & > * {
+    display: block;
+  }
+
+  &.small {
+    ::ng-deep {
+      .mat {
+        &-icon-button {
+          @include generate-sizes(size(medium));
+        }
+      }
+    }
+  }
+}
+
+::ng-deep button {
+  &:focus {
+    outline: none;
+  }
+
+  &.mat {
+    &-button,
+    &-flat-button,
+    &-raised-button,
+    &-stroked-button {
+      min-width: 100px;
+    }
+
+    &-icon-button {
+      &:not([disabled]):hover {
+        shared-svg-icon {
+          color: color(link);
+          transition: get-transition();
+        }
+      }
+    }
+  }
+}

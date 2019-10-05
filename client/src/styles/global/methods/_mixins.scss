@@ -1,0 +1,63 @@
+// Elements
+/// Adds disable functionality to a specific element or in general.
+///
+/// @content [Other style rules to be added to the disabled elements.]
+///
+/// @param {boolean} $inside-element [true]
+///   `true` if the mixin is applied to a specific element, `false` otherwise.
+@mixin disable-element($inside-element: true) {
+  %disabled {
+    cursor: not-allowed !important;
+    text-decoration: none !important;
+
+    * {
+      pointer-events: none;
+    }
+  }
+
+  @if $inside-element == true {
+    &.disabled, &:disabled, &[disabled],
+    .disabled &, :disabled &, [disabled] & {
+      @content;
+      @extend %disabled;
+    }
+  } @else {
+    .disabled, :disabled, [disabled] {
+      @content;
+      @extend %disabled;
+    }
+  }
+}
+
+/// Adds margin if it's not last child.
+///
+/// @param {string} $position [right] - Direction to apply margin.
+/// @param {boolean} $applyOnChildren [true]
+///   `true` to apply margin to element's children, `false` to apply margin to current element.
+/// @param {} $space [space-between-elements()] - The space to be added between elements.
+@mixin not-last-child($direction: right, $applyOnChildren: true, $space: space-between-elements()) {
+  $positions: (top, right, bottom, left);
+  @if not index($positions, $direction) {
+    @warn 'Unknown position `#{$position}`.';
+  }
+
+  @if $applyOnChildren {
+    & > :not(:last-child) {
+      margin-#{$direction}: $space;
+    }
+  } @else {
+    &:not(:last-child) {
+      margin-#{$direction}: $space;
+    }
+  }
+}
+
+// Structure
+/// Generates identical width and height.
+/// ** Used for square icons/images **
+///
+/// @param $size - Icon/image size.
+@mixin generate-sizes($size) {
+  width: $size;
+  height: $size;
+}

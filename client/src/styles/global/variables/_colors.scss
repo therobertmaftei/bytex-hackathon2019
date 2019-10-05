@@ -1,3 +1,65 @@
+// Usage:
+//   ❯ Use color function to obtain a color.
+//   ❯ e.g.: background-color: color(primary);
+
 $colors: (
- white: #fff
+  primary-lighter-x: #E6F1FF,
+  primary-lighter: #BAD9FF,
+  primary-light: #68ABFF,
+  primary: #338FFF,
+  primary-dark: #004599,
+
+  white: #FFF,
+  black: #000,
+
+  // Grey shades
+  grey-lighter: #EEE,
+  grey-light: #CCC,
+  grey: #999,
+  grey-devil: #666,
+  grey-dark: #555,
+  grey-darker: #333,
+
+  // Sections
+  section-light: #F7F9FC,
+  section: #F0F4F8,
+  section-dark: #E8EEF5,
+
+  // Border
+  border-color: #DDD
 );
+
+$colors: map-merge($colors, (
+  // Text
+  text: map-get($colors, grey-dark),
+  title: map-get($colors, grey-darker),
+  link: #00A3ED,
+));
+
+// Severity Palette
+$severity-colors: (
+  critical: #FF1744,
+  major: #FF7D00,
+  minor: #FC0,
+  warning: #40C4FF,
+  info: #00C7B3
+);
+$colors: map-merge($colors, $severity-colors);
+
+@each $name, $color in $severity-colors {
+  .#{$name} {
+    color: $color;
+  }
+}
+
+/// Access colors.
+///
+/// @param {string} $colorName - The needed color.
+/// @returns color code for the specified `$colorName`.
+@function color($colorName) {
+  @if not map-has-key($colors, $colorName) {
+    @error 'Color `#{$colorName}` not available.';
+  }
+
+  @return map-get($colors, $colorName);
+}

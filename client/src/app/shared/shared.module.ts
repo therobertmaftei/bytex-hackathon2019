@@ -6,15 +6,21 @@ import { MatButtonToggleModule, MatMenuModule, MatSnackBar } from '@angular/mate
 import { TranslateModule } from '@ngx-translate/core';
 
 import { BaseComponent } from '@shared/containers';
-import { MaterialModule } from '../material.module';
+import { RoutePipe } from '@shared/pipes';
+import { UIModule } from '@ui/ui.module';
 import { SharedMapsComponent } from './components';
+import { HTTPService } from './services';
 
 @NgModule({
   declarations: [
     BaseComponent,
+    RoutePipe,
     SharedMapsComponent
   ],
   imports: [
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyAk4RXpu0S8rnh_CJgFLvyCnKB-8NJaH68'
+    }),
     CommonModule,
     FormsModule,
     MatButtonToggleModule,
@@ -24,18 +30,20 @@ import { SharedMapsComponent } from './components';
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyAk4RXpu0S8rnh_CJgFLvyCnKB-8NJaH68'
     }),
-    MaterialModule
+    UIModule
   ],
   exports: [
+    BaseComponent,
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    BaseComponent,
-    AgmCoreModule,
-    SharedMapsComponent
+    RoutePipe,
+    SharedMapsComponent,
+    UIModule
   ],
   providers: [
-    MatSnackBar
+    MatSnackBar,
+    HTTPService
   ]
 })
 export class SharedModule { }
