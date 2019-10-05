@@ -29,9 +29,12 @@ const routes: Routes = [
   {
     path: '',
     component: CoreComponent,
-    resolve: {
-      appReady: AppReadyResolver
-    }
+    children: [
+      {
+        path: 'reports',
+        loadChildren: () => import('./reports/report.module').then(m => m.ReportsModule)
+      }
+    ]
   },
   {
     path: '**',

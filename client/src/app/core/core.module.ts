@@ -6,17 +6,21 @@ import { FooterComponent, HeaderComponent } from '@core/containers';
 import { CoreComponent } from '@core/core.component';
 import { translateConfig } from '@shared/libs';
 import { SharedModule } from '@shared/shared.module';
+import { ReportsModule } from '../reports/report.module';
+import { SideMenuComponent } from './containers/side-menu/side-menu.component';
 
 @NgModule({
   declarations: [
     CoreComponent,
     FooterComponent,
-    HeaderComponent
+    HeaderComponent,
+    SideMenuComponent
   ],
   imports: [
     RouterModule,
     SharedModule,
-    TranslateModule.forChild(translateConfig)
+    TranslateModule.forChild(translateConfig),
+    ReportsModule
   ],
   exports: [CoreComponent]
 })

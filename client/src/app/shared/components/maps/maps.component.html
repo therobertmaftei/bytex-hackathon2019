@@ -1,10 +1,17 @@
-<agm-map *ngIf="map"
-         [latitude]="map.location.latitude"
-         [longitude]="map.location.longitude"
-         [zoom]="map.location.zoom">
+<agm-map [streetViewControl]="false"
+          [zoomControl]="false"
+          [latitude]="map.location.latitude"
+          [longitude]="map.location.longitude"
+          [zoom]="map.location.zoom"
+          (mapClick)="addItem($event)">
   <agm-marker [latitude]="marker.latitude"
               [longitude]="marker.longitude"
               *ngFor="let marker of map.markers">
-    <agm-info-window [maxWidth]="300">{{ marker.details }}</agm-info-window>
+    <agm-info-window *ngIf="marker.details"
+                      [maxWidth]="300">{{ marker.details }}</agm-info-window>
   </agm-marker>
 </agm-map>
+
+<button color="primary" class="add" mat-fab mat-raised-button>
+  <mat-icon>menu</mat-icon>
+</button>

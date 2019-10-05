@@ -15,9 +15,10 @@ import { SdkModule } from '@sdk/sdk.module';
 import { SessionModule } from '@session/session.module';
 import { translateConfig } from '@shared/libs';
 
-import { AgmCoreModule } from '@agm/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { MaterialModule } from './material.module';
+import { ReportsModule } from './reports/report.module';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { AppComponent } from './app.component';
     HttpClientModule,
     SdkModule,
     SessionModule,
-    TranslateModule.forRoot(translateConfig)
+    TranslateModule.forRoot(translateConfig),
+    MaterialModule
   ],
   providers: [
     CookieService,

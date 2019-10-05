@@ -1,11 +1,23 @@
 :host {
-  display: flex;
-  width: 100vw;
-  height: 100vh;
+  position: relative;
 }
 
 agm-map {
   height: 100%;
   width: 100%;
   display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+button {
+  z-index: 2;
+  position: absolute;
+  color: #333;
+
+  &.add {
+    bottom: 20px;
+    right: 20px;
+  }
 }

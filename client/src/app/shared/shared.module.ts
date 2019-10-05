@@ -6,6 +6,7 @@ import { MatButtonToggleModule, MatMenuModule, MatSnackBar } from '@angular/mate
 import { TranslateModule } from '@ngx-translate/core';
 
 import { BaseComponent } from '@shared/containers';
+import { MaterialModule } from '../material.module';
 import { SharedMapsComponent } from './components';
 
 @NgModule({
@@ -22,7 +23,8 @@ import { SharedMapsComponent } from './components';
     TranslateModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyAk4RXpu0S8rnh_CJgFLvyCnKB-8NJaH68'
-    })
+    }),
+    MaterialModule
   ],
   exports: [
     CommonModule,
