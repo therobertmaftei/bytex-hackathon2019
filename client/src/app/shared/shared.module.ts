@@ -5,22 +5,30 @@ import { MatButtonToggleModule, MatMenuModule, MatSnackBar } from '@angular/mate
 import { TranslateModule } from '@ngx-translate/core';
 
 import { BaseComponent } from '@shared/containers';
+import { RoutePipe } from '@shared/pipes';
+import { UIModule } from '@ui/ui.module';
 
 @NgModule({
-  declarations: [BaseComponent],
+  declarations: [
+    BaseComponent,
+    RoutePipe
+  ],
   imports: [
     CommonModule,
     FormsModule,
     MatButtonToggleModule,
     MatMenuModule,
     ReactiveFormsModule,
-    TranslateModule
+    TranslateModule,
+    UIModule
   ],
   exports: [
+    BaseComponent,
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    BaseComponent
+    RoutePipe,
+    UIModule
   ],
   providers: [
     MatSnackBar

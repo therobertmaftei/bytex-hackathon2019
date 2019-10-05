@@ -1,7 +1,13 @@
 @import '~@angular/material/theming';
-@import 'theme-palette';
+@import
+  'theme-palette',
+  'overrides';
 
-@include mat-core();
+@include mat-core(
+  mat-typography-config(
+    $font-family: $font-family
+  )
+);
 
 $theme-primary: mat-palette($theme-palette);
 $theme-accent: mat-palette($theme-palette, A200, A100, A400);

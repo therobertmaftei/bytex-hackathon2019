@@ -1,0 +1,130 @@
+@import 'global';
+
+:host {
+  display: block;
+}
+
+::ng-deep input {
+  &[type="file"] {
+    display: none;
+  }
+}
+
+span {
+  @extend %flex-row;
+  flex-grow: 1;
+}
+
+.candid {
+  ::ng-deep .mat {
+    &-input-element {
+      padding-right: size(small) !important;
+      padding-left: size(small) !important;
+    }
+
+    &-form-field {
+      width: 100%;
+      font-size: size(font, 14);
+
+      &.mat-focused {
+        .mat-form-field-label {
+          color: rgba(0, 0, 0, .6);
+        }
+      }
+
+      &-label-wrapper {
+        left: size(small) !important;
+      }
+
+      .mat-form-field {
+        &-flex {
+          align-items: center;
+          padding: size(small);
+        }
+
+        &-prefix,
+        &-suffix {
+          .mat-icon {
+            position: relative;
+            font-size: size(font, 18);
+            color: rgba(0, 0, 0, .55);
+          }
+        }
+      }
+
+      &-appearance {
+        &-legacy {
+          .mat-form-field-infix {
+            border-top-width: 0;
+            width: auto;
+          }
+        }
+
+        &-outline {
+          .mat-form-field {
+            &-prefix {
+              .mat-icon {
+                left: size(small, 2);
+              }
+            }
+
+            &-suffix {
+              .mat-icon {
+                right: size(small, 2);
+              }
+            }
+
+            &-infix {
+              margin-top: -4px;
+              margin-right: size(small, 4);
+              margin-left: size(small, 4);
+              border-top-width: size(small, 2) !important;
+            }
+
+            &-outline {
+              &-thick {
+                .mat-form-field-outline-end,
+                .mat-form-field-outline-gap,
+                .mat-form-field-outline-start {
+                  color: rgba(0, 0, 0, .12);
+                  border-width: to-rem(1);
+                  transition: none;
+                }
+              }
+
+              &-gap {
+                border-top-color: currentColor !important;
+              }
+
+              &-end {
+                border-radius: 0 size(medium, 3) size(medium, 3) 0;
+              }
+
+              &-start {
+                width: 50% !important;
+                border-radius: size(medium, 3) 0 0 size(medium, 3);
+              }
+            }
+          }
+
+          &.mat-form-field-should-float {
+            .mat-form-field-label {
+              display: none !important;
+              transform: none !important;
+
+              &.mat-form-field-empty,
+              &.mat-empty {
+                display: block !important;
+              }
+            }
+          }
+
+          .mat-input-element {
+            display: block;
+            margin-top: -4.5px;
+          }
+        }
+      }
+    }
+  }
+}

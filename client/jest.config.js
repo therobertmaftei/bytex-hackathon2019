@@ -95,6 +95,7 @@ module.exports = {
     '@session/(.*)': '<rootDir>/src/app/session/$1',
     '@shared/(.*)': '<rootDir>/src/app/shared/$1',
     '@template/(.*)': '<rootDir>/src/app/template/$1',
+    '@ui/(.*)': '<rootDir>/src/app/ui/$1'
   },
 
   // An array of regexp pattern strings, matched against all module paths before considered 'visible' to the module loader

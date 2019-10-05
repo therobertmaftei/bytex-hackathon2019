@@ -1,0 +1,71 @@
+// Content:
+//   ❯ Flex
+//   ❯ Grid
+//   ❯ Container
+
+// Flex
+%flex-row {
+  display: flex;
+
+  &-center {
+    &-x {
+      display: flex;
+      justify-content: center;
+    }
+
+    &-y {
+      display: flex;
+      align-items: center;
+    }
+
+    &-xy {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
+
+%flex-column {
+  @mixin flex-column {
+    display: flex;
+    flex-direction: column;
+  }
+
+  @include flex-column;
+
+  &-center {
+    &-x {
+      @include flex-column;
+      align-items: center;
+    }
+
+    &-y {
+      @include flex-column;
+      justify-content: center;
+    }
+
+    &-xy {
+      @include flex-column;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
+
+// Grid
+%grid {
+  @mixin grid {
+    display: grid;
+    grid-auto-rows: 1fr;
+  }
+
+  @include grid;
+
+  @for $numberOfColumns from 2 through 4 {
+    &-#{$numberOfColumns}-columns {
+      @include grid;
+      grid-template-columns: repeat($numberOfColumns, 1fr);
+    }
+  }
+}

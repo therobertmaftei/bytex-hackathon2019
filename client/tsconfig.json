@@ -25,7 +25,8 @@
       "@sdk/*": ["src/app/sdk/*"],
       "@session/*": ["src/app/session/*"],
       "@shared/*": ["src/app/shared/*"],
-      "@template/*": ["src/app/template/*"]
+      "@template/*": ["src/app/template/*"],
+      "@ui/*": ["src/app/ui/*"]
     }
   }
 }

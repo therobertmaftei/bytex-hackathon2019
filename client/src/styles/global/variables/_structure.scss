@@ -1,11 +1,111 @@
+/// Validates parameter to be a number equal to 1 or an even one greater.
+///
+/// @todo enable validation.
+///
+/// @param {number} $number - Number to be validated.
+/// @returns `$number` if validations pass.
+@function positive-number($number) {
+  @if type-of($number) != number or
+      $number < 1 or
+      $number % 2 != 0 and $number != 1
+  {
+    @error 'Accepted only a number equal to 1 or an even one greater than 1.';
+  }
+
+  @return $number;
+}
+
+/// Converts received size to `rem`, if validations pass.
+///
+/// @param {number} $size - A `pixel` value to be converted to `rem` equivalent.
+/// @returns a `rem` value.
+@function to-rem($size) {
+  $scale: 0.0625;
+  @return #{$scale * positive-number($size)}rem;
+}
+
+/// Validates size to be in a specific interval, otherwise throws an error.
+///
+/// @param {number} $size - Value to be checked.
+/// @returns {number} `$size` an interval value.
+@function size-validation($size) {
+  $available-sizes: (1, 2, 3, 4);
+
+  @if not index($available-sizes, $size) {
+    $max: max($available-sizes...);
+    $min: min($available-sizes...);
+    $error-message: 'Size `#{$size}` not available. Size must be a number between #{$min} and #{$max}.';
+    @error $error-message;
+  }
+
+  @return $size;
+}
+
+/// Multiplies received size with 4, if validations pass.
+///
+/// @example
+///   for 16px base and $size: 1, will return to-rem(4) which is 4px
+///   for 16px base, pixels equivalent for sizes from 1 to 4: (4, 8, 12, 16)
+///
+/// @param {number} $size [1]
+/// @returns a `rem` value.
 @function small($size: 1) {
-  @return $size * 0.4rem;
+  @return to-rem(size-validation($size) * 4);
 }
 
+/// Add 2 and multiplies received size with 8, if validations pass.
+///
+/// @example
+///   for 16px base and $size: 1, will return to-rem(24) which is 24px
+///   for 16px base, pixels equivalent for sizes from 1 to 4: (24, 32, 40, 48)
+///
+/// @param {number} $size [1]
+/// @returns a `rem` value.
 @function medium($size: 1) {
-  @return $size * 8 + small(4);
+  @return to-rem((size-validation($size) + 2) * 8);
 }
 
+/// Add 3 and multiplies received size with 16, if validations pass.
+///
+/// @example
+///   for 16px base and $size: 1, will return to-rem(64) which is 64px
+///   for 16px base, pixels equivalent for sizes from 1 to 4: (64, 80, 96, 112)
+///
+/// @param {number} $size [1]
+/// @returns a `rem` value.
 @function large($size: 1) {
-  @return $size * 16 + medium(4);
+  @return to-rem((size-validation($size) + 3) * 16);
+}
+
+/// Access sizes.
+///
+/// Usage:
+///   ❯ Call this method with an option and a size based on some properties.
+///   ❯ For margins and paddings (or equivalent) pass: `small`, `medium` or `large`, as $option.
+///   ❯ For font-size pass: `font`, as $option, and an even number for $size.
+///   ❯ For width or height (or equivalent) pass: `dimension`, as $option, and a multiple of 10 for $size.
+///
+/// @param {string} $option
+///   The type of size to be returned representing one of the possibilities: `small`, `medium`, `large`, `font`, `dimensions`.
+/// @param {number} $size [1] - The needed size.
+/// @returns a size in `rem`.
+@function size($option, $size: 1) {
+  $available-options: (small, medium, large, font, dimension);
+  @if not index($available-options, $option) {
+    @error 'Size option not available. Option must be one of these: #{$available-options}';
+  }
+
+  $size: positive-number($size); // Validate size.
+
+  @if $option == small or $option == medium or $option == large {
+    @return call(get-function($option), $size);
+  } @else if $option == dimension {
+    @if $size % 10 != 0 {
+      @error 'Only multiples of 10 accepted.';
+    }
+
+    @return to-rem($size);
+  } @else {
+    @return to-rem($size);
+  }
 }

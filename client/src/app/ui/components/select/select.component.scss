@@ -1,0 +1,28 @@
+@import 'global';
+
+:host {
+  display: block;
+}
+
+.candid {
+  ::ng-deep .mat {
+    &-form-field {
+      width: 100%;
+      font-size: size(font, 14);
+
+      &-label {
+        margin-left: size(small, 2);
+      }
+    }
+
+    &-select {
+      &-value-text {
+        margin-left: size(small, 2);
+      }
+
+      &-arrow {
+        margin-right: size(small, 2);
+      }
+    }
+  }
+}

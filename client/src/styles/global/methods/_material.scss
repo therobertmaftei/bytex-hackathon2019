@@ -1,18 +1,3 @@
-$breakpoints: (
-  sm: 600,
-  md: 960,
-  lg: 1280,
-  xl: 1920
-);
-
-@mixin respond-to($breakpoint) {
-  $width: map_get($breakpoints, $breakpoint);
-
-  @media (min-width: #{$width}px) {
-    @content;
-  }
-}
-
 $shadows: (
   0: none,
   1: '0px 1px 3px 0px rgba(0,0,0,.2),0px 1px 1px 0px rgba(0,0,0,.14),0px 2px 1px -1px rgba(0,0,0,.12)',
@@ -67,7 +52,7 @@ $transitions: (
   @return #{map-get(map-get($transitions, duration), $duration)}ms map-get(map-get($transitions, easing), $easing);
 }
 
-$zIndex: (
+$z-indexes: (
   mobileStepper: 700,
   appBar: 800,
   drawer: 900,
@@ -76,10 +61,10 @@ $zIndex: (
   tooltip: 1200
 );
 
-@function z-index($type) {
-  @return map-get($zIndex, $type);
-}
+@function z-index($z-index) {
+  @if not map-has-key($z-indexes, $z-index) {
+    @error 'z-index `#{$z-index}` not available.';
+  }
 
-@function size($multiple: 1) {
-  @return $multiple * 1rem;
+  @return map-get($z-indexes, $z-index);
 }

@@ -1,0 +1,10 @@
+html, body {
+  @extend %flex-column;
+  min-height: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  min-width: size(dimension, 1200);
+  flex: 1;
+}

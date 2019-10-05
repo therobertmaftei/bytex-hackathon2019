@@ -1,10 +1,10 @@
 ::-webkit-scrollbar {
   // Width & height
-  width: small();
+  @include generate-sizes(to-rem(6));
 
   // Handle
   &-thumb {
-    background-color: grey;
-    border-radius: small();
+    background-color: color(grey);
+    border-radius: size(small, 2);
   }
 }
