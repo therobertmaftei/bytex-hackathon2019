@@ -1,1 +1,25 @@
-<p>test</p>
+<section class="cards">
+  <a [routerLink]="'SMART' | route: ['HOME']"
+     queryParamsHandling="preserve"
+     class="smart-home">
+    <h2>{{ 'smart.smart.smart_home' | translate }}</h2>
+    <p>{{ 'common.see_more' | translate }}</p>
+  </a>
+  <a [routerLink]="'SMART' | route: ['CAR']"
+     queryParamsHandling="preserve"
+     class="smart-car">
+    <h2>{{ 'smart.smart.smart_car' | translate }}</h2>
+    <p>{{ 'common.see_more' | translate }}</p>
+  </a>
+  <a [routerLink]="'SMART' | route: ['PARKING']"
+     queryParamsHandling="preserve"
+     class="smart-park">
+    <h2>{{ 'smart.smart.smart_parking' | translate }}</h2>
+    <p>{{ 'common.see_more' | translate }}</p>
+  </a>
+</section>
+
+<section class="status">
+  <img src="/assets/images/smart-pie.svg">
+  <img src="/assets/images/smart-chart.svg">
+</section>

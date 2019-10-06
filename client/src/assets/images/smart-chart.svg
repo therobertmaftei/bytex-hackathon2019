@@ -1,0 +1,176 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="690" height="353" viewBox="0 0 690 353">
+    <defs>
+        <linearGradient id="a" x1="50%" x2="50%" y1="0%" y2="100%">
+            <stop offset="0%" stop-color="#B46EC9"/>
+            <stop offset="100%" stop-color="#3F49A1"/>
+        </linearGradient>
+        <linearGradient id="b" x1="50%" x2="50%" y1="0%" y2="100%">
+            <stop offset="0%" stop-color="#B46EC9"/>
+            <stop offset="100%" stop-color="#3F49A1"/>
+        </linearGradient>
+        <linearGradient id="c" x1="50%" x2="50%" y1="0%" y2="100%">
+            <stop offset="0%" stop-color="#B46EC9"/>
+            <stop offset="100%" stop-color="#3F49A1"/>
+        </linearGradient>
+        <linearGradient id="d" x1="50%" x2="50%" y1="0%" y2="100%">
+            <stop offset="0%" stop-color="#B46EC9"/>
+            <stop offset="100%" stop-color="#3F49A1"/>
+        </linearGradient>
+        <linearGradient id="e" x1="50%" x2="50%" y1="0%" y2="100%">
+            <stop offset="0%" stop-color="#B46EC9"/>
+            <stop offset="100%" stop-color="#3F49A1"/>
+        </linearGradient>
+        <linearGradient id="f" x1="50%" x2="50%" y1="0%" y2="100%">
+            <stop offset="0%" stop-color="#B46EC9"/>
+            <stop offset="100%" stop-color="#3F49A1"/>
+        </linearGradient>
+        <linearGradient id="g" x1="50%" x2="50%" y1="0%" y2="100%">
+            <stop offset="0%" stop-color="#B46EC9"/>
+            <stop offset="100%" stop-color="#3F49A1"/>
+        </linearGradient>
+        <linearGradient id="h" x1="50%" x2="50%" y1="0%" y2="100%">
+            <stop offset="0%" stop-color="#B46EC9"/>
+            <stop offset="100%" stop-color="#3F49A1"/>
+        </linearGradient>
+        <linearGradient id="i" x1="50%" x2="50%" y1="0%" y2="100%">
+            <stop offset="0%" stop-color="#B46EC9"/>
+            <stop offset="100%" stop-color="#3F49A1"/>
+        </linearGradient>
+        <linearGradient id="j" x1="50%" x2="50%" y1="0%" y2="100%">
+            <stop offset="0%" stop-color="#B46EC9"/>
+            <stop offset="100%" stop-color="#3F49A1"/>
+        </linearGradient>
+        <linearGradient id="k" x1="50%" x2="50%" y1="0%" y2="100%">
+            <stop offset="0%" stop-color="#B46EC9"/>
+            <stop offset="100%" stop-color="#3F49A1"/>
+        </linearGradient>
+        <linearGradient id="l" x1="50%" x2="50%" y1="0%" y2="100%">
+            <stop offset="0%" stop-color="#B46EC9"/>
+            <stop offset="100%" stop-color="#3F49A1"/>
+        </linearGradient>
+        <linearGradient id="m" x1="50%" x2="50%" y1="0%" y2="100%">
+            <stop offset="0%" stop-color="#B46EC9"/>
+            <stop offset="100%" stop-color="#3F49A1"/>
+        </linearGradient>
+        <linearGradient id="n" x1="50%" x2="50%" y1="0%" y2="100%">
+            <stop offset="0%" stop-color="#B46EC9"/>
+            <stop offset="100%" stop-color="#3F49A1"/>
+        </linearGradient>
+        <linearGradient id="o" x1="50%" x2="50%" y1="0%" y2="100%">
+            <stop offset="0%" stop-color="#D2D2E0"/>
+            <stop offset="100%" stop-color="#3F49A1"/>
+        </linearGradient>
+        <linearGradient id="p" x1="50%" x2="50%" y1="0%" y2="100%">
+            <stop offset="0%" stop-color="#D2D2E0"/>
+            <stop offset="100%" stop-color="#3F49A1"/>
+        </linearGradient>
+        <linearGradient id="q" x1="50%" x2="50%" y1="0%" y2="100%">
+            <stop offset="0%" stop-color="#D2D2E0"/>
+            <stop offset="100%" stop-color="#3F49A1"/>
+        </linearGradient>
+        <linearGradient id="r" x1="50%" x2="50%" y1="0%" y2="100%">
+            <stop offset="0%" stop-color="#D2D2E0"/>
+            <stop offset="100%" stop-color="#3F49A1"/>
+        </linearGradient>
+        <linearGradient id="s" x1="50%" x2="50%" y1="0%" y2="100%">
+            <stop offset="0%" stop-color="#D2D2E0"/>
+            <stop offset="100%" stop-color="#3F49A1"/>
+        </linearGradient>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <rect width="690" height="353" fill="#FFF" rx="10"/>
+        <text fill="#73B5E5" font-family="Montserrat-Regular, Montserrat" font-size="12" letter-spacing=".343">
+            <tspan x="615" y="334">See More</tspan>
+        </text>
+        <path stroke="#73B5E5" stroke-opacity=".2" d="M38 285h611M38 245h611M38 205h611M38 165h611M38 125h611M38 85h611M38 45h611"/>
+        <text fill="#73B5E5" fill-opacity=".4" font-family="Montserrat-Regular, Montserrat" font-size="10" letter-spacing=".286">
+            <tspan x="23" y="289">0</tspan>
+        </text>
+        <text fill="#73B5E5" fill-opacity=".4" font-family="Montserrat-Regular, Montserrat" font-size="10" letter-spacing=".286">
+            <tspan x="12" y="249">100</tspan>
+        </text>
+        <text fill="#73B5E5" fill-opacity=".4" font-family="Montserrat-Regular, Montserrat" font-size="10" letter-spacing=".286">
+            <tspan x="10" y="209">200</tspan>
+        </text>
+        <text fill="#73B5E5" fill-opacity=".4" font-family="Montserrat-Regular, Montserrat" font-size="10" letter-spacing=".286">
+            <tspan x="10" y="169">300</tspan>
+        </text>
+        <text fill="#73B5E5" fill-opacity=".4" font-family="Montserrat-Regular, Montserrat" font-size="10" letter-spacing=".286">
+            <tspan x="9" y="129">400</tspan>
+        </text>
+        <text fill="#73B5E5" fill-opacity=".4" font-family="Montserrat-Regular, Montserrat" font-size="10" letter-spacing=".286">
+            <tspan x="10" y="89">500</tspan>
+        </text>
+        <text fill="#73B5E5" fill-opacity=".4" font-family="Montserrat-Regular, Montserrat" font-size="10" letter-spacing=".286">
+            <tspan x="9" y="49">600</tspan>
+        </text>
+        <text fill="#73B5E5" fill-opacity=".4" font-family="Montserrat-Regular, Montserrat" font-size="10" letter-spacing=".286">
+            <tspan x="43" y="303">Jun</tspan>
+        </text>
+        <text fill="#73B5E5" fill-opacity=".4" font-family="Montserrat-Regular, Montserrat" font-size="10" letter-spacing=".286">
+            <tspan x="103" y="303">Jul</tspan>
+        </text>
+        <text fill="#73B5E5" fill-opacity=".4" font-family="Montserrat-Regular, Montserrat" font-size="10" letter-spacing=".286">
+            <tspan x="159" y="303">Aug</tspan>
+        </text>
+        <text fill="#73B5E5" fill-opacity=".4" font-family="Montserrat-Regular, Montserrat" font-size="10" letter-spacing=".286">
+            <tspan x="215" y="303">Sept</tspan>
+        </text>
+        <text fill="#73B5E5" fill-opacity=".4" font-family="Montserrat-Regular, Montserrat" font-size="10" letter-spacing=".286">
+            <tspan x="280" y="303">Oct</tspan>
+        </text>
+        <text fill="#73B5E5" fill-opacity=".4" font-family="Montserrat-Regular, Montserrat" font-size="10" letter-spacing=".286">
+            <tspan x="340" y="303">Nov</tspan>
+        </text>
+        <text fill="#73B5E5" fill-opacity=".4" font-family="Montserrat-Regular, Montserrat" font-size="10" letter-spacing=".286">
+            <tspan x="396" y="303">Dec</tspan>
+        </text>
+        <text fill="#73B5E5" fill-opacity=".4" font-family="Montserrat-Regular, Montserrat" font-size="10" letter-spacing=".286">
+            <tspan x="492" y="303">Jan</tspan>
+        </text>
+        <text fill="#73B5E5" fill-opacity=".4" font-family="Montserrat-Regular, Montserrat" font-size="10" letter-spacing=".286">
+            <tspan x="551" y="303">Feb</tspan>
+        </text>
+        <text fill="#73B5E5" fill-opacity=".4" font-family="Montserrat-Regular, Montserrat" font-size="10" letter-spacing=".286">
+            <tspan x="607" y="303">Mar</tspan>
+        </text>
+        <path stroke="#ACC89E" stroke-dasharray="0,5" stroke-linecap="square" d="M43 146h606"/>
+        <path stroke="#FF685B" stroke-dasharray="0,5" stroke-linecap="square" d="M43 65h606"/>
+        <path fill="url(#a)" d="M48 205a5 5 0 0 1 5 5v75H43v-75a5 5 0 0 1 5-5z"/>
+        <path fill="url(#b)" d="M58 169a5 5 0 0 1 5 5v111H53V174a5 5 0 0 1 5-5z"/>
+        <path fill="url(#c)" d="M68 222a5 5 0 0 1 5 5v58H63v-58a5 5 0 0 1 5-5z"/>
+        <path fill="url(#d)" d="M108 104a5 5 0 0 1 5 5v176h-10V109a5 5 0 0 1 5-5z"/>
+        <path fill="url(#e)" d="M118 184a5 5 0 0 1 5 5v96h-10v-96a5 5 0 0 1 5-5z"/>
+        <path fill="url(#c)" d="M128 222a5 5 0 0 1 5 5v58h-10v-58a5 5 0 0 1 5-5z"/>
+        <path fill="url(#a)" d="M164 205a5 5 0 0 1 5 5v75h-10v-75a5 5 0 0 1 5-5z"/>
+        <path fill="url(#b)" d="M174 169a5 5 0 0 1 5 5v111h-10V174a5 5 0 0 1 5-5z"/>
+        <path fill="url(#f)" d="M184 156a5 5 0 0 1 5 5v124h-10V161a5 5 0 0 1 5-5z"/>
+        <path fill="url(#a)" d="M285 205a5 5 0 0 1 5 5v75h-10v-75a5 5 0 0 1 5-5z"/>
+        <path fill="url(#b)" d="M295 169a5 5 0 0 1 5 5v111h-10V174a5 5 0 0 1 5-5z"/>
+        <path fill="url(#g)" d="M305 194a5 5 0 0 1 5 5v86h-10v-86a5 5 0 0 1 5-5z"/>
+        <path fill="url(#h)" d="M220 50a5 5 0 0 1 5 5v230h-10V55a5 5 0 0 1 5-5z"/>
+        <path fill="url(#i)" d="M230 178a5 5 0 0 1 5 5v102h-10V183a5 5 0 0 1 5-5z"/>
+        <path fill="url(#j)" d="M240 165a5 5 0 0 1 5 5v115h-10V170a5 5 0 0 1 5-5z"/>
+        <path fill="url(#k)" d="M401 218a5 5 0 0 1 5 5v62h-10v-62a5 5 0 0 1 5-5z"/>
+        <path fill="url(#l)" d="M411 237a5 5 0 0 1 5 5v43h-10v-43a5 5 0 0 1 5-5z"/>
+        <path fill="url(#g)" d="M421 194a5 5 0 0 1 5 5v86h-10v-86a5 5 0 0 1 5-5z"/>
+        <path fill="url(#m)" d="M345 152a5 5 0 0 1 5 5v128h-10V157a5 5 0 0 1 5-5z"/>
+        <path fill="url(#k)" d="M355 218a5 5 0 0 1 5 5v62h-10v-62a5 5 0 0 1 5-5z"/>
+        <path fill="url(#n)" d="M365 239a5 5 0 0 1 5 5v41h-10v-41a5 5 0 0 1 5-5z"/>
+        <path fill="url(#o)" d="M556 218a5 5 0 0 1 5 5v62h-10v-62a5 5 0 0 1 5-5z"/>
+        <path fill="url(#p)" d="M566 237a5 5 0 0 1 5 5v43h-10v-43a5 5 0 0 1 5-5z"/>
+        <path fill="url(#q)" d="M576 194a5 5 0 0 1 5 5v86h-10v-86a5 5 0 0 1 5-5z"/>
+        <path fill="url(#o)" d="M612 218a5 5 0 0 1 5 5v62h-10v-62a5 5 0 0 1 5-5z"/>
+        <path fill="url(#p)" d="M622 237a5 5 0 0 1 5 5v43h-10v-43a5 5 0 0 1 5-5z"/>
+        <path fill="url(#q)" d="M632 194a5 5 0 0 1 5 5v86h-10v-86a5 5 0 0 1 5-5z"/>
+        <path fill="url(#r)" d="M497 152a5 5 0 0 1 5 5v128h-10V157a5 5 0 0 1 5-5z"/>
+        <path fill="url(#o)" d="M507 218a5 5 0 0 1 5 5v62h-10v-62a5 5 0 0 1 5-5z"/>
+        <path fill="url(#s)" d="M517 239a5 5 0 0 1 5 5v41h-10v-41a5 5 0 0 1 5-5z"/>
+        <circle cx="108" cy="145" r="7" fill="#FFF" stroke="#ACC89E" stroke-width="4"/>
+        <circle cx="220" cy="65" r="7" fill="#FFF" stroke="#FF685B" stroke-width="4"/>
+        <text fill="#949494" fill-opacity=".2" font-family="Montserrat-Regular, Montserrat" font-size="9" letter-spacing=".257">
+            <tspan x="445" y="317">2020</tspan>
+        </text>
+        <path stroke="#949494" stroke-dasharray="0,10" stroke-linecap="square" d="M456.5 303.5v-271"/>
+    </g>
+</svg>

@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="442" height="353" viewBox="0 0 442 353">
+    <defs>
+        <linearGradient id="c" x1="61.464%" x2="61.464%" y1="24.299%" y2="106.055%">
+            <stop offset="0%" stop-color="#FFD5D5"/>
+            <stop offset="100%" stop-color="#FFABAB"/>
+        </linearGradient>
+        <ellipse id="b" cx="77.625" cy="120.07" rx="77.625" ry="77.88"/>
+        <filter id="a" width="120.6%" height="120.5%" x="-10.3%" y="-9%" filterUnits="objectBoundingBox">
+            <feOffset dy="2" in="SourceAlpha" result="shadowOffsetOuter1"/>
+            <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="5"/>
+            <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.2 0"/>
+        </filter>
+        <filter id="d" width="120.3%" height="111.7%" x="-10.2%" y="-5.9%" filterUnits="objectBoundingBox">
+            <feOffset dy="2" in="SourceAlpha" result="shadowOffsetOuter1"/>
+            <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="2"/>
+            <feColorMatrix in="shadowBlurOuter1" result="shadowMatrixOuter1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.2 0"/>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"/>
+                <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+        </filter>
+        <path id="e" d="M117.592 134.505L0 204.835 40.367 0z"/>
+        <linearGradient id="f" x1="57.286%" x2=".178%" y1="27.709%" y2="42.199%">
+            <stop offset="0%" stop-color="#CCEBFC"/>
+            <stop offset="100%" stop-color="#9DD2F8"/>
+        </linearGradient>
+        <filter id="h" width="118%" height="110.3%" x="-9%" y="-5.2%" filterUnits="objectBoundingBox">
+            <feOffset dy="2" in="SourceAlpha" result="shadowOffsetOuter1"/>
+            <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="3"/>
+            <feColorMatrix in="shadowBlurOuter1" result="shadowMatrixOuter1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.2 0"/>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"/>
+                <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+        </filter>
+        <path id="i" d="M.771 154.233L58.948 30.998c8.714-56.856 40.339-34.378 94.874 67.434C208.358 200.244 167.31 270.73 30.678 309.888L.77 154.233z"/>
+        <linearGradient id="j" x1="68.664%" x2="60.899%" y1="8.815%" y2="95.371%">
+            <stop offset="0%" stop-color="#EDEB85"/>
+            <stop offset="100%" stop-color="#CECA66"/>
+        </linearGradient>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <rect width="442" height="353" fill="#FFF" rx="10"/>
+        <path d="M310.064 181.99l-.878-96.8c-13.534-41.745 16.58-16.518 90.344 75.68 73.763 92.199 43.94 99.239-89.466 21.12z"/>
+        <g transform="translate(232 65)">
+            <use fill="#000" filter="url(#a)" xlink:href="#b"/>
+            <use fill="url(#c)" xlink:href="#b"/>
+        </g>
+        <g filter="url(#d)" transform="rotate(105 193.93 230.952)">
+            <mask id="g" fill="#fff">
+                <use xlink:href="#e"/>
+            </mask>
+            <ellipse cx="118.469" cy="134.505" fill="url(#f)" mask="url(#g)" rx="95.653" ry="95.824"/>
+        </g>
+        <g filter="url(#h)" transform="rotate(177 154.565 171.817)">
+            <mask id="k" fill="#fff">
+                <use xlink:href="#i"/>
+            </mask>
+            <path fill="url(#j)" d="M5.113 262.413c60.054 3.302 99.053-58.578 97.408-108.571-1.645-49.993-40.72-92.54-97.73-102.426-57.009-9.887-97.086 42.463-97.086 102.426 0 59.962 37.354 105.27 97.408 108.571z" mask="url(#k)"/>
+        </g>
+        <text fill="#73B5E5" font-family="Montserrat-Regular, Montserrat" font-size="12" letter-spacing=".343">
+            <tspan x="367" y="334">See More</tspan>
+        </text>
+        <circle cx="45" cy="111" r="10" fill="#CECA66"/>
+        <text fill="#73B5E5" font-family="Montserrat-Regular, Montserrat" font-size="12" letter-spacing=".343">
+            <tspan x="70" y="116">SMART HOME</tspan>
+        </text>
+        <text fill="#73B5E5" font-family="Montserrat-Regular, Montserrat" font-size="12" letter-spacing=".343">
+            <tspan x="70" y="196">SMART CAR</tspan>
+        </text>
+        <text fill="#73B5E5" font-family="Montserrat-Regular, Montserrat" font-size="12" letter-spacing=".343">
+            <tspan x="70" y="276">SMART CAR</tspan>
+        </text>
+        <circle cx="45" cy="191" r="10" fill="#9DD2F8"/>
+        <circle cx="45" cy="271" r="10" fill="#FFABAB"/>
+        <text fill="#CECA66" font-family="Montserrat-Medium, Montserrat" font-size="24" font-weight="400">
+            <tspan x="35" y="87">45%</tspan>
+        </text>
+        <text fill="#9DD2F8" font-family="Montserrat-Medium, Montserrat" font-size="24" font-weight="400">
+            <tspan x="35" y="167">35%</tspan>
+        </text>
+        <text fill="#FFABAB" font-family="Montserrat-Medium, Montserrat" font-size="24" font-weight="400">
+            <tspan x="35" y="247">20%</tspan>
+        </text>
+        <text fill="#73B5E5" font-family="Montserrat-Regular, Montserrat" font-size="16" letter-spacing=".5">
+            <tspan x="16" y="31">Overall Usage</tspan>
+        </text>
+    </g>
+</svg>

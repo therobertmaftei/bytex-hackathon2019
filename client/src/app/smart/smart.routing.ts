@@ -11,7 +11,7 @@ const routes: Routes = [
     component: SmartComponent,
     children: [
       {
-        path: ROUTES.SMART.children.DASHBOARD.url,
+        path: '',
         component: SmartDashboardComponent
       },
       {

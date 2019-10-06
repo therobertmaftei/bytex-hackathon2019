@@ -1,1 +1,66 @@
 @import 'global';
+
+$padding: size(medium);
+
+@mixin card {
+  @extend %flex-column;
+  min-width: size(dimension, 100);
+  justify-content: space-between;
+  padding: $padding;
+  background-color: color(white);
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: center;
+  border-radius: size(dimension, 10);
+}
+
+:host {
+  @include not-last-child(bottom, true, $padding);
+  @extend %flex-column;
+  padding: $padding;
+  overflow-x: auto;
+
+  & > * {
+    @include not-last-child(right, true, $padding);
+    @extend %flex-row;
+    flex-basis: 50%;
+  }
+}
+
+.cards {
+  overflow-x: hidden;
+
+  & > * {
+    @include card;
+    flex-basis: 33%;
+    color: color(white);
+    width: size(dimension, 250);
+
+    h2 {
+      font-weight: bold;
+    }
+
+    p {
+      align-self: flex-end;
+    }
+  }
+}
+
+.status {
+  & > * {
+    @include card;
+
+  }
+}
+
+.smart {
+  &-home {
+    background-image: url('/assets/images/smart-home.png');
+  }
+  &-car {
+    background-image: url('/assets/images/smart-car.png');
+  }
+  &-park {
+    background-image: url('/assets/images/smart-park.png');
+  }
+}

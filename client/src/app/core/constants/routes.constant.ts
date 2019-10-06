@@ -24,9 +24,6 @@ export abstract class ROUTES {
   public static SMART: IRoute = {
     url: 'smart',
     children: {
-      DASHBOARD: {
-        url: 'dashboard'
-      },
       HOME: {
         url: 'home',
         children: {

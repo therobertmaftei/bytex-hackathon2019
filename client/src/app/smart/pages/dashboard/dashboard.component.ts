@@ -8,8 +8,6 @@ import { BaseComponent } from '@shared/containers';
   styleUrls: ['./dashboard.component.scss']
 })
 export class SmartDashboardComponent extends BaseComponent implements OnInit {
-  public user: any;
-
   constructor() {
     super();
   }
