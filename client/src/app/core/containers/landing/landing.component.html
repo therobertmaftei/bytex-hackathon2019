@@ -10,21 +10,78 @@
     <cd-button class="big">
       <button [attr.aria-label]="'landing.landing.getStarted' | translate"
               mat-flat-button
-              (click)="getStarted()"
+              [routerLink]="['/register']"
               color="accent">{{ 'landing.landing.getStarted' | translate | uppercase }}</button>
     </cd-button>
   </div>
 </header>
 
 <section class="screen-landing">
+  <!-- <img class="landing" src="assets/images/landing-background.svg" alt="Landing"> -->
   <div class="max-width">
     <h2 class="description">{{ 'landing.landing.description' | translate }}</h2>
-    <cd-button class="rounded big">
-      <button [attr.aria-label]="'landing.landing.learnMore' | translate"
-              mat-flat-button
-              color="accent">{{ 'landing.landing.learnMore' | translate | uppercase }}</button>
-    </cd-button>
+    <a href="#container">
+      <cd-button class="rounded big">
+        <button [attr.aria-label]="'landing.landing.learnMore' | translate"
+                mat-flat-button
+                color="accent">{{ 'landing.landing.learnMore' | translate | uppercase }}</button>
+      </cd-button>
+    </a>
   </div>
 
   <img src="/assets/images/city.svg" class="city" alt="Buildings">
 </section>
+
+<section class="stepper">
+  <div class="step"></div>
+</section>
+
+<div class="container" id="container">
+  <div class="about-ai">ABOUT CITY.AI</div>
+  <div class="description-ui">
+    <div class="text">The app came to be due to the necessity of having functionalities that ease up a citizen’s life in one single place and at one click away.</div>
+    <img src="assets/images/manastire.svg" alt="Manastire">
+  </div>
+
+  <span class="divider"></span>
+
+  <div class="our-services">OUR SERVICES</div>
+  <div class="our-services-container">
+    <div class="group">
+      <h2>FREE WI-FI</h2>
+      <p>Through the updated hardware for the wi-fi network mesh, each citizen can now enjoy free and safe wi-fi at city level.</p>
+    </div>
+    <div class="group">
+      <h2>INTERCONNECTED</h2>
+      <p>Through the updated hardware for the wi-fi network mesh, each citizen can now enjoy free and safe wi-fi at city level.</p>
+    </div>
+    <div class="group-img">
+      <img src="assets/images/img1.svg" alt="">
+    </div>
+    <div class="group-img">
+      <img src="assets/images/imag2.svg" alt="">
+    </div>
+    <div class="group">
+      <h2>REAL TIME REPORTING</h2>
+      <p>Using the interconnectedness, users can report any event. The events will then be filtered and transposed to each citizen’s dashboard.</p>
+    </div>
+    <div class="group">
+      <h2>SYNC YOUR SMART HOME</h2>
+      <p>UsinYou have the option to synchronize your smart home and its devices to the mesh network, which connects to every emergency line.
+        You can also get updates which enhance the security of yours and other people’s homes.</p>
+    </div>
+    <div class="group-img">
+      <img src="assets/images/img3.svg" alt="">
+    </div>
+    <div class="group-img">
+      <img src="assets/images/img4.svg" alt="">
+    </div>
+  </div>
+</div>
+<div class="city-wide">
+  <img src="assets/images/city-wide.svg" alt="">
+  <div>
+    <h2>Scalability is one of its important features.</h2>
+    <p>This app will always consider the citizens’ needs and evolve accordingly.</p>
+  </div>
+</div>

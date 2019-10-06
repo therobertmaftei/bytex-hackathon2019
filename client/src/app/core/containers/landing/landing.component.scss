@@ -1,7 +1,7 @@
 @import 'global';
 
 :host {
-  @extend %flex-column;
+  // @extend %flex-column;
   width: 100%;
   position: relative;
 }
@@ -10,7 +10,7 @@ header {
   @extend %flex-row-center-y;
   left: 0;
   justify-content: space-between;
-  position: fixed;
+  position: absolute;
   top: 0;
   right: 0;
   height: fit-content;
@@ -30,12 +30,19 @@ header {
 .screen {
   &-landing {
     @extend %flex-column-center-y;
-    height: 100vh;
+    min-height: 120vh;
     position: relative;
     padding: 0 size(large, 3);
     background-image: url('/assets/images/landing-background.svg');
-    background-size: 100% auto;
+    background-size: 100%;
     background-repeat: no-repeat;
+
+    img.landing {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+    }
 
     .max-width {
       @include not-last-child(bottom, true, size(large, 2));
@@ -51,10 +58,173 @@ header {
 
     .city {
       position: absolute;
-      top: 50%;
+      top: 48%;
       right: 0;
       transform: translateY(-50%);
       z-index: z-index(drawer);
     }
+  }
+}
+
+.stepper {
+  width: 100%;
+  height: 30px;
+  box-shadow: 0 10px 8px 0 rgba(0, 0, 0, 0.14);
+  margin-bottom: 100px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+
+  .step {
+    height: 100px;
+    width: 100px;
+    box-shadow: 9px 9px 10px 0px rgba(0, 0, 0, 0.14);
+    border-radius: 25px;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    margin-top: -29px;
+    background: white;
+    position: absolute;
+  }
+}
+
+.container {
+  margin: 250px auto 0 auto;
+  width: 1440px;
+  background-color: white;
+  display: block;
+  height: auto;
+  background-image: url('/assets/images/container-bg.svg');
+  padding-bottom: 200px;
+  background-size: 113%;
+
+  & > * {
+    margin: 130px 0;
+  }
+}
+
+.divider {
+  width: 100%;
+  display: block;
+}
+
+.about-ai, .our-services {
+  width: 573px;
+  height: 159px;
+  border-radius: 50px;
+  border-bottom-left-radius: 0;
+  background-color: rgba(115, 181, 229, 0.1);
+  font-family: Montserrat;
+  font-size: 60px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: -0.5px;
+  color: #73b5e5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.description-ui {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+
+  .text {
+    width: 779px;
+    height: 196px;
+    font-family: Montserrat;
+    font-size: 40px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #73b5e5;
+  }
+}
+
+.our-services-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding-bottom: 300px;
+
+  .group {
+    width: 500px;
+    margin-top: 100px;
+
+    &-img {
+      margin-top: 100px;
+      width: 500px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 50px;
+    }
+
+    h2 {
+      font-family: Montserrat;
+      font-size: 40px;
+      font-weight: bold;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: normal;
+      letter-spacing: normal;
+      color: #73b5e5;
+    }
+
+    p {
+      font-family: Montserrat;
+      font-size: 24px;
+      font-weight: normal;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: normal;
+      letter-spacing: normal;
+      color: #73b5e5;
+    }
+  }
+}
+
+.city-wide {
+  img {
+    width: 100%;
+    margin-top: -460px;
+  }
+
+  div {
+    height: 650px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  h2 {
+    font-family: Montserrat;
+    font-size: 50px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #73b5e5;
+    margin-top: -70px;
+  }
+
+  p {
+    font-family: Montserrat;
+    font-size: 30px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #73b5e5;
+    margin-top: 50px;
   }
 }
