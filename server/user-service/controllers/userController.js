@@ -64,7 +64,7 @@ exports.getNotifications = async (req, res) => {
 
 exports.getUser = async (req, res) => {
   try {
-    const user = await req.db.User.find({
+    const user = await req.db.User.findOne({
       _id: ObjectId(req.user[idClaim]),
     });
     delete user._doc.password;
