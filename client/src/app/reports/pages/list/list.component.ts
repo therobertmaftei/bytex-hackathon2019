@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { FormArray, FormControl } from '@angular/forms';
 
 import { select, Store } from '@ngrx/store';
 import { List } from 'immutable';
@@ -18,10 +18,11 @@ import { BaseComponent } from '@shared/containers';
 })
 export class ReportListComponent extends BaseComponent implements OnInit {
   public reports: IReport[] = [];
-  public coordinates: ILocationResponse;
   public map: IMapOptions;
   public categories = new FormControl();
-  public categoriesList: string[] = CATEGORIES.items;
+  public categoriesList: string[] = [...CATEGORIES.items];
+
+  private coordinates: ILocationResponse;
 
   constructor(private store$: Store<IState>) {
     super();
@@ -29,7 +30,12 @@ export class ReportListComponent extends BaseComponent implements OnInit {
 
   public ngOnInit(): void {
     super.ngOnInit();
+
     this.subscriptions$.push(
+      this.categories.valueChanges
+        .subscribe((category: string) => this.store$.dispatch(
+          Actions.getReports.dispatchLoading({ ...this.coordinates, category }))
+        ),
       this.store$
         .pipe(select(reportsStateLoadingSelector))
         .subscribe((response: boolean) => (this.isLoading = response)),

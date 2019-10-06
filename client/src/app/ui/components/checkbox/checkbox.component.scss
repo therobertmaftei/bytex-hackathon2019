@@ -1,3 +1,17 @@
+@import 'global';
+
 :host {
   display: block;
+}
+
+::ng-deep .mat-checkbox {
+  .mat-checkbox-layout {
+    @include not-last-child(right, true, size(small));
+    @extend %flex-row-center-y;
+
+    .mat-checkbox-label {
+      @extend %flex-row;
+      line-height: 1;
+    }
+  }
 }

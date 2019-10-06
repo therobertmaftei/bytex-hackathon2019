@@ -14,37 +14,71 @@
   background-color: color(white);
   border-radius: size(dimension, 10);
   overflow-y: auto;
-
-  .card {
-    @include not-last-child(bottom);
-    @extend %flex-column;
-
-    &:not(:last-child) {
-      $space: size(small, 4);
-      padding-bottom: $space;
-      margin-bottom: $space;
-      border-bottom: to-rem(1) solid color(primary-lighter-x);
-    }
-
-    header {
-      @extend %flex-row-center-y;
-      justify-content: space-between;
-
-      .title {
-        margin: 0;
-      }
-
-      img {
-        @include generate-sizes(size(medium, 2));
-        border-radius: 50%;
-      }
-    }
-  }
+  color: color(primary);
 
   &-wrapper {
     @include not-last-child(bottom, true, $padding);
     @extend %flex-column;
+    justify-content: space-between;
     padding: $padding;
-    flex-basis: 40%;
+    flex-basis: 45%;
+
+    header {
+      @extend %flex-row-center-y;
+      justify-content: space-between;
+    }
+
+    footer {
+      @include not-last-child;
+      @extend %flex-row;
+      color: color(primary);
+
+      & > * {
+        @extend %flex-row-center-y;
+      }
+    }
   }
+}
+
+.card {
+  @include not-last-child(bottom);
+  @extend %flex-column;
+
+  &:not(:last-child) {
+    $space: size(small, 4);
+    padding-bottom: $space;
+    margin-bottom: $space;
+    border-bottom: to-rem(1) solid color(primary-lighter-x);
+  }
+
+  header {
+    @extend %flex-row-center-y;
+    justify-content: space-between;
+
+    & > :first-child {
+      @include not-last-child;
+      @extend %flex-row-center-y;
+    }
+
+    .title {
+      margin: 0;
+    }
+
+    img {
+      @include generate-sizes(size(medium, 2));
+      border-radius: 50%;
+    }
+  }
+}
+
+.categories {
+  @include not-last-child;
+  @extend %flex-row-center-y;
+}
+
+.dot {
+  $size: size(small, 4);
+  @include generate-sizes($size);
+  font-size: $size;
+  user-select: none;
 }
