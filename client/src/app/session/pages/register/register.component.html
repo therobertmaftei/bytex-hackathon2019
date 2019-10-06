@@ -1,0 +1,48 @@
+<div class="wrapper">
+    <div class="container">
+      <div class="logo">
+        <img src="assets/images/logo.svg" alt="Logo">
+      </div>
+      <span class="group">
+        <div class="graphic">
+          <img src="assets/images/undraw-directions-x-53-j.svg" alt="Image" />
+        </div>
+        <div class="form" [formGroup]="form">
+          <h1>Register</h1>
+          <span class="form-field">
+            <label>First Name</label>
+            <mat-form-field appearance="outline">
+              <input type="text" matInput formControlName="firstName">
+            </mat-form-field>
+          </span>
+          <span class="form-field">
+            <label>Last Name</label>
+            <mat-form-field appearance="outline">
+              <input type="text" matInput formControlName="lastName">
+            </mat-form-field>
+          </span>
+          <span class="form-field">
+            <label>E-mail</label>
+            <mat-form-field appearance="outline">
+              <input type="email" matInput formControlName="email">
+            </mat-form-field>
+          </span>
+          <span class="form-field">
+            <label>Password</label>
+            <mat-form-field appearance="outline">
+              <input type="password" matInput formControlName="password">
+            </mat-form-field>
+          </span>
+
+          <button class="button"
+                  mat-button
+                  (click)="register()"
+                  [disabled]="form.invalid">REGISTER</button>
+          <span class="already">
+            Already registered?
+            <a class="already--red" [routerLink]="['/login']">Sign In</a>
+          </span>
+        </div>
+      </span>
+    </div>
+  </div>

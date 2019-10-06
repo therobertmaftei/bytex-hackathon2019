@@ -1,0 +1,33 @@
+<div class="wrapper">
+  <div class="container">
+    <div class="logo">
+      <img src="assets/images/logo.svg" alt="Logo">
+    </div>
+    <span class="group">
+      <div class="graphic">
+        <img src="assets/images/undraw-directions-x-53-j.svg" alt="Image" />
+      </div>
+      <div class="form" [formGroup]="form">
+        <h1>Login</h1>
+        <span class="form-field">
+          <label>E-mail</label>
+          <mat-form-field appearance="outline">
+            <input type="email" matInput [formControl]="form.get('email')">
+          </mat-form-field>
+        </span>
+        <span class="form-field">
+          <label>Password</label>
+          <mat-form-field appearance="outline">
+            <input type="password" matInput [formControl]="form.get('password')">
+          </mat-form-field>
+        </span>
+
+        <button class="button" mat-button [disabled]="form.invalid" (click)="login($event)">LOGIN</button>
+        <span class="already">
+          Not a member?
+          <a class="already--red" [routerLink]="['/register']">Register</a>
+        </span>
+      </div>
+    </span>
+  </div>
+</div>

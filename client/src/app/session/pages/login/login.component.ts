@@ -1,19 +1,20 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
-import { Store } from '@ngrx/store';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
-import { AuthenticationService } from '@session/services';
-import { IState } from '@session/store/reducer';
+import { Router } from '@angular/router';
 import { BaseComponent } from '@shared/containers';
+import { HTTPService } from '@shared/services';
 
 @Component({
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent extends BaseComponent implements OnInit {
+  public form: FormGroup;
+
   constructor(
-    private store$: Store<IState>,
-    private auth: AuthenticationService,
+    private router: Router,
+    private auth: HTTPService,
     private formBuilder: FormBuilder
   ) {
     super();
@@ -21,9 +22,22 @@ export class LoginComponent extends BaseComponent implements OnInit {
 
   public ngOnInit(): void {
     super.ngOnInit();
+    this.form = this.formBuilder.group({
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', Validators.required]
+    });
   }
 
-  public login(): void {
-
+  public login(event: MouseEvent): void {
+    this.auth.post<{email: string; password: string}, any>(
+      'users/auth/login',
+      {
+        email: this.form.get('email').value,
+        password: this.form.get('password').value
+      }
+    ).subscribe(value => {
+      localStorage.setItem('token', value.data.token);
+      this.router.navigate(['']);
+    });
   }
 }
