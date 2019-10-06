@@ -8,7 +8,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { reportsEffects, reportsReducer } from '@reports/store';
 import { translateConfig } from '@shared/libs';
 import { SharedModule } from '@shared/shared.module';
-import { SmartDashboardComponent, SmartHomeComponent } from '@smart/pages';
+import { SmartCarsComponent, SmartDashboardComponent, SmartHomeComponent, SmartParkingComponent } from '@smart/pages';
 import { SmartComponent } from '@smart/smart.component';
 import { SmartRoutingModule } from '@smart/smart.routing';
 
@@ -16,7 +16,9 @@ import { SmartRoutingModule } from '@smart/smart.routing';
   declarations: [
     SmartComponent,
     SmartDashboardComponent,
-    SmartHomeComponent
+    SmartHomeComponent,
+    SmartParkingComponent,
+    SmartCarsComponent
   ],
   imports: [
     CommonModule,
