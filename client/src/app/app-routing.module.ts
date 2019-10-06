@@ -6,7 +6,6 @@ import { LandingComponent } from '@core/containers';
 import { CoreComponent } from '@core/core.component';
 import { IsAuthenticatedGuard, IsNotAuthenticatedGuard } from '@session/guards';
 import { LoginComponent, LogoutComponent, RegisterComponent } from '@session/pages';
-// import { IsAuthenticatedGuard } from '@session/guards';
 
 const routes: Routes = [
   {
@@ -37,6 +36,10 @@ const routes: Routes = [
       {
         path: ROUTES.REPORTS.url,
         loadChildren: () => import('./reports/reports.module').then(m => m.ReportsModule)
+      },
+      {
+        path: ROUTES.SMART.url,
+        loadChildren: () => import('./smart/smart.module').then(m => m.SmartModule)
       }
     ]
   },

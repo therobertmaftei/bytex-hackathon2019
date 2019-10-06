@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
+import { ROUTES } from '@core/constants';
+import { SmartHomeComponent } from '@smart/pages';
 import { SmartComponent } from '@smart/smart.component';
 
 const routes: Routes = [
@@ -8,14 +10,10 @@ const routes: Routes = [
     path: '',
     component: SmartComponent,
     children: [
-      // {
-      //   path: '',
-      //   component: ReportListComponent
-      // },
-      // {
-      //   path: 'new',
-      //   component: NewReportsComponent
-      // }
+      {
+        path: ROUTES.SMART.children.HOME.url,
+        component: SmartHomeComponent
+      }
     ]
   }
 ];

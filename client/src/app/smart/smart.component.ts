@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  template: `<router-outlet></router-outlet>`
+  templateUrl: './smart.component.html',
+  styleUrls: ['./smart.component.scss']
 })
 export class SmartComponent { }

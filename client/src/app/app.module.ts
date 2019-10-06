@@ -16,6 +16,7 @@ import { ReportsModule } from '@reports/reports.module';
 import { SdkModule } from '@sdk/sdk.module';
 import { SessionModule } from '@session/session.module';
 import { translateConfig } from '@shared/libs';
+import { SmartModule } from '@smart/smart.module';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -33,6 +34,7 @@ import { AppComponent } from './app.component';
     ReportsModule,
     SdkModule,
     SessionModule,
+    SmartModule,
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
     StoreModule.forRoot({ core: coreReducer }),
     TranslateModule.forRoot(translateConfig)

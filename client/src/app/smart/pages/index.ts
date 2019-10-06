@@ -1,1 +1,1 @@
-// silence
+export * from './home/home.component';

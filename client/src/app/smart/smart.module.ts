@@ -3,23 +3,27 @@ import { NgModule } from '@angular/core';
 
 import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
-import { SharedModule } from '@shared/shared.module';
+import { TranslateModule } from '@ngx-translate/core';
 
+import { reportsEffects, reportsReducer } from '@reports/store';
+import { translateConfig } from '@shared/libs';
+import { SharedModule } from '@shared/shared.module';
+import { SmartHomeComponent } from '@smart/pages';
 import { SmartComponent } from '@smart/smart.component';
 import { SmartRoutingModule } from '@smart/smart.routing';
-import { smartEffects } from '@smart/store/effects';
-import { smartReducer } from '@smart/store/reducer';
 
 @NgModule({
   declarations: [
-    SmartComponent
+    SmartComponent,
+    SmartHomeComponent
   ],
   imports: [
     CommonModule,
-    EffectsModule.forFeature(smartEffects),
+    EffectsModule.forFeature(reportsEffects),
     SmartRoutingModule,
     SharedModule,
-    StoreModule.forFeature('smart', smartReducer)
+    StoreModule.forFeature('reports', reportsReducer),
+    TranslateModule.forChild(translateConfig)
   ]
 })
 export class SmartModule { }

@@ -39,6 +39,14 @@ export abstract class ROUTES {
             url: ':id'
           }
         }
+      },
+      PARKING: {
+        url: 'parking',
+        children: {
+          id: {
+            url: ':id'
+          }
+        }
       }
     }
   };

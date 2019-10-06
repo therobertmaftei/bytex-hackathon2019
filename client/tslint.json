@@ -31,7 +31,8 @@
         "cd",
         "core",
         "session",
-        "shared"
+        "shared",
+        "smart"
       ],
       "kebab-case"
     ],
