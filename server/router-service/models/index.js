@@ -1,9 +1,9 @@
 const User = require('./user');
-const Notification = require('./notification');
+const Router = require('./router');
 
 const db = {
   User,
-  Notification
+  Router
 };
 
 module.exports = db;
