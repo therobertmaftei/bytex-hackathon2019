@@ -4,32 +4,35 @@ import { RouterModule, Routes } from '@angular/router';
 import { ROUTES } from '@core/constants';
 import { LandingComponent } from '@core/containers';
 import { CoreComponent } from '@core/core.component';
-import { AppReadyResolver } from '@core/resolvers';
-import { LoginComponent, LogoutComponent } from '@session/pages';
+import { IsAuthenticatedGuard, IsNotAuthenticatedGuard } from '@session/guards';
+import { LoginComponent, LogoutComponent, RegisterComponent } from '@session/pages';
 // import { IsAuthenticatedGuard } from '@session/guards';
 
 const routes: Routes = [
   {
     path: ROUTES.LANDING.url,
+    canActivate: [IsAuthenticatedGuard],
     component: LandingComponent
   },
   {
     path: 'login',
-    resolve: {
-      appReady: AppReadyResolver
-    },
+    canActivate: [IsAuthenticatedGuard],
     component: LoginComponent
   },
   {
+    path: 'register',
+    canActivate: [IsAuthenticatedGuard],
+    component: RegisterComponent
+  },
+  {
     path: 'logout',
-    resolve: {
-      appReady: AppReadyResolver
-    },
+    canActivate: [IsAuthenticatedGuard],
     component: LogoutComponent
   },
   {
     path: '',
     component: CoreComponent,
+    canActivate: [IsNotAuthenticatedGuard],
     children: [
       {
         path: ROUTES.REPORTS.url,
@@ -39,7 +42,7 @@ const routes: Routes = [
   },
   {
     path: '**',
-    redirectTo: `/${ROUTES.LANDING.url}`,
+    redirectTo: `/reports`,
     pathMatch: 'full'
   }
 ];

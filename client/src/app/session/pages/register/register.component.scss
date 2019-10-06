@@ -2,7 +2,7 @@
 
 .wrapper {
   height: 100vh;
-  width: 100vw;
+  width: 100%;
   display: flex;
   justify-content: center;
   background-image: linear-gradient(338deg, #8fc9f2, #91a0ff);
@@ -23,7 +23,6 @@
   .group {
     max-width: 1440px;
     display: flex;
-    margin-top: 80px;
   }
 
   .graphic {
