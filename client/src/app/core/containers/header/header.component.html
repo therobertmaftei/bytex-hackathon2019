@@ -2,12 +2,8 @@
   <div class="user-profile">
     <img [attr.src]="user?.profilePicture">
   </div>
-  <p class="name">{{user?.firstname}} {{user?.lastname}}</p>
-  <button mat-icon-button [matMenuTriggerFor]="menu">
-    <mat-icon class="dropdown">arrow_drop_down</mat-icon>
+  <!-- <p class="name">{{user?.firstname}} {{user?.lastname}}</p> -->
+  <button mat-icon-button (click)="logout()">
+    <mat-icon class="dropdown">exit_to_app</mat-icon>
   </button>
-  <mat-menu #menu="matMenu">
-    <button mat-menu-item>Logout 1</button>
-    <button mat-menu-item>Logout 2</button>
-  </mat-menu>
 </header>

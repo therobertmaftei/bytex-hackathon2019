@@ -205,3 +205,46 @@ exports.updateHome = async (req, res) => {
     });
   }
 };
+
+exports.alertHome = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const { body: payload } = req;
+
+    const home = await req.db.Home.findOne({ _id: ObjectId(id) });
+
+    if (!home) {
+      return res.status(HttpStatus.NOT_FOUND).json({
+        success: false,
+        message: [`Home not found`],
+      });
+    }
+
+    const users = await req.db.User.find({});
+
+    for (const user of users) {
+      if (user._id.toString() === home.userId) {
+        await req.db.Notification.create({
+          ...payload,
+          userId: user._id.toString(),
+        });
+      } else {
+        await req.db.Notification.create({
+          description: 'A neibor have issues',
+          category: 'warning',
+          userId: user._id.toString(),
+        });
+      }
+    }
+
+    return res.status(HttpStatus.NO_CONTENT).json({
+      success: true,
+    });
+  } catch (error) {
+    req.log.error(`Unable alert home -> ${error}`);
+    return res.status(HttpStatus.INTERNAL_SERVER_ERROR).json({
+      success: false,
+      message: [`Unable alert home`],
+    });
+  }
+};

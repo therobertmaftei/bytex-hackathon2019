@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { BaseComponent } from '@shared/containers';
 import { HTTPService } from '@shared/services';
@@ -11,7 +12,10 @@ import { HTTPService } from '@shared/services';
 export class HeaderComponent extends BaseComponent implements OnInit {
   public user: any;
 
-  constructor(private http: HTTPService) {
+  constructor(
+    private http: HTTPService,
+    private router: Router
+  ) {
     super();
   }
 
@@ -24,5 +28,10 @@ export class HeaderComponent extends BaseComponent implements OnInit {
         this.user = value.data.user;
       })
     );
+  }
+
+  public logout(): void {
+    localStorage.removeItem('token');
+    this.router.navigate(['/login']);
   }
 }
