@@ -7,15 +7,15 @@ import { AuthenticationService } from '@session/services';
 @Injectable({
   providedIn: 'root'
 })
-export class IsAuthenticatedGuard implements CanActivate, CanActivateChild {
+export class IsNotAuthenticatedGuard implements CanActivate, CanActivateChild {
   constructor(private auth: AuthenticationService, private router: Router) { }
 
   public canActivateChild(
     childRoute: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
   ): Observable<boolean> | Promise<boolean> | boolean {
-    if (localStorage.getItem('token')) {
-      this.router.navigate(['/reports']);
+    if (!localStorage.getItem('token')) {
+      this.router.navigate(['/login']);
       return false;
     }
 
@@ -26,8 +26,8 @@ export class IsAuthenticatedGuard implements CanActivate, CanActivateChild {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
   ): Observable<boolean> | Promise<boolean> | boolean {
-    if (localStorage.getItem('token')) {
-      this.router.navigate(['/reports']);
+    if (!localStorage.getItem('token')) {
+      this.router.navigate(['/login']);
       return false;
     }
 

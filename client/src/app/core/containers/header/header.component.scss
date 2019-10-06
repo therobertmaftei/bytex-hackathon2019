@@ -3,3 +3,31 @@
 :host {
   display: block;
 }
+
+.container {
+  background-color: white;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.name {
+  margin-bottom: 0;
+  margin-left: 10px;
+}
+
+.user-profile {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+  }
+}
+
+.dropdown {
+  color: rgba(115, 181, 229, 0.6);
+  // font-size: 35px;
+}

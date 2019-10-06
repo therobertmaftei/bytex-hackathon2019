@@ -1,14 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import { FormArray, FormControl } from '@angular/forms';
+import { FormControl } from '@angular/forms';
+import { MatDialog } from '@angular/material';
 
 import { select, Store } from '@ngrx/store';
 import { List } from 'immutable';
 
 import { CATEGORIES } from '@reports/constants';
+import { NewReportsComponent } from '@reports/containers';
 import { ILocationResponse, IReport } from '@reports/models';
 import { Actions } from '@reports/store/actions';
 import { IState } from '@reports/store/reducer';
-import { locationSelector, reportsSelector, reportsStateLoadingSelector } from '@reports/store/state';
+import { locationSelector, reportsSelector, reportsStateLoadingSelector, reportStateDataSelector } from '@reports/store/state';
 import { IMapOptions } from '@shared/components';
 import { BaseComponent } from '@shared/containers';
 
@@ -24,7 +26,10 @@ export class ReportListComponent extends BaseComponent implements OnInit {
 
   private coordinates: ILocationResponse;
 
-  constructor(private store$: Store<IState>) {
+  constructor(
+    private dialog: MatDialog,
+    private store$: Store<IState>
+  ) {
     super();
   }
 
@@ -36,6 +41,13 @@ export class ReportListComponent extends BaseComponent implements OnInit {
         .subscribe((category: string) => this.store$.dispatch(
           Actions.getReports.dispatchLoading({ ...this.coordinates, category }))
         ),
+      this.store$
+        .pipe(select(reportStateDataSelector))
+        .subscribe((response) => {
+          if (response) {
+            this.store$.dispatch(Actions.getReports.dispatchLoading(this.coordinates));
+          }
+        }),
       this.store$
         .pipe(select(reportsStateLoadingSelector))
         .subscribe((response: boolean) => (this.isLoading = response)),
@@ -76,6 +88,8 @@ export class ReportListComponent extends BaseComponent implements OnInit {
   }
 
   public addReport(): void {
-    // @todo
+    this.dialog.open(NewReportsComponent, {
+      autoFocus: false
+    });
   }
 }

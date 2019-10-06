@@ -1,0 +1,90 @@
+<cd-button class="close">
+  <button type="button"
+          mat-icon-button
+          (click)="close()"
+          aria-label="Close">
+    <mat-icon>close</mat-icon>
+  </button>
+</cd-button>
+
+<main class="content">
+  <shared-loading-dots class="full-content"
+                       [message]="loadingMessage | translate"
+                       *ngIf="isLoading"></shared-loading-dots>
+
+  <form class="form" [formGroup]="form" (ngSubmit)="submit()">
+    <shared-form-section [title]="'reports.reports.add_report' | translate">
+      <div class="form-field">
+        <label class="required">{{ 'reports.reports.label_title' | translate }}</label>
+        <cd-input>
+          <mat-form-field [hideRequiredMarker]="true"
+                          [floatLabel]="'never'">
+            <mat-label>{{ 'common.cto_enter' | translate: { action: 'reports.reports.label_title' | translate | lowercase } }}</mat-label>
+            <input formControlName="title"
+                   matInput
+                   required
+                   type="text" />
+            <mat-error *ngIf="form.get('title').getError('required')">
+              {{ 'common.error_required_text' | translate: {
+                field: 'reports.reports.label_title' | translate
+              } }}
+            </mat-error>
+          </mat-form-field>
+        </cd-input>
+      </div>
+
+      <div class="form-field">
+        <label class="required">{{ 'reports.reports.label_description' | translate }}</label>
+        <cd-input>
+          <mat-form-field [hideRequiredMarker]="true"
+                          [floatLabel]="'never'">
+            <mat-label>{{ 'common.cto_enter' | translate: { action: 'reports.reports.label_description' | translate | lowercase } }}</mat-label>
+            <textarea formControlName="description"
+                      matInput
+                      required
+                      type="text"></textarea>
+            <mat-error *ngIf="form.get('description').getError('required')">
+              {{ 'common.error_required_text' | translate: {
+                field: 'reports.reports.label_description' | translate
+              } }}
+            </mat-error>
+          </mat-form-field>
+        </cd-input>
+      </div>
+
+      <div class="form-field">
+        <label class="required">{{ 'reports.reports.label_category' | translate }}</label>
+        <cd-radio>
+          <mat-radio-group class="categories" color="primary" formControlName="category">
+            <mat-radio-button *ngFor="let item of categoriesList" [value]="item">
+              <mat-icon class="dot" [class]="item">fiber_manual_record</mat-icon>
+              <span>{{ ('reports.reports.' + item) | translate }}</span>
+            </mat-radio-button>
+          </mat-radio-group>
+        </cd-radio>
+      </div>
+    </shared-form-section>
+
+    <div class="form-buttons">
+      <cd-button>
+        <button [attr.aria-label]="'common.cancel' | translate"
+                (click)="close()"
+                color="primary"
+                mat-stroked-button
+                type="button">
+          {{ 'common.cancel' | translate | uppercase }}
+        </button>
+      </cd-button>
+
+      <cd-button>
+        <button [attr.aria-label]="'reports.reports.add_report' | translate"
+                color="primary"
+                [disabled]="!form.touched || form.invalid || isLoading"
+                mat-flat-button
+                type="submit">
+          {{ 'reports.reports.add_report' | translate | uppercase }}
+        </button>
+      </cd-button>
+    </div>
+  </form>
+</main>

@@ -1,0 +1,9 @@
+<header [ngClass]="{'critical': type === 'error'}"
+        *ngIf="title || description">
+  <h2 *ngIf="title">{{ title }}</h2>
+  <p *ngIf="description">{{ description }}</p>
+</header>
+
+<main>
+  <ng-content></ng-content>
+</main>

@@ -17,7 +17,7 @@ export interface ILocationResponse {
 export interface IReport {
   __v: 0;
   _id: string;
-  categories: string[];
+  category: string;
   createdAt: string;
   description: string;
   location: ILocationResponse;
@@ -25,4 +25,10 @@ export interface IReport {
   updatedAt: string;
   user: IUser;
   userId: string;
+}
+
+export interface IPostPayload {
+  title: string;
+  description: string;
+  category: string;
 }

@@ -13,6 +13,15 @@ export const reportsStateLoadingSelector = createSelector(
   (state: IRecord<IState>) => state.getIn(['reports', 'loading'])
 );
 
+export const reportStateDataSelector = createSelector(
+  reportsFeatureSelector,
+  (state: IRecord<IState>) => state.getIn(['report', 'data'])
+);
+export const reportStateLoadingSelector = createSelector(
+  reportsFeatureSelector,
+  (state: IRecord<IState>) => state.getIn(['report', 'loading'])
+);
+
 export const locationSelector = createSelector(
   reportsFeatureSelector,
   (state: IRecord<IState>) => state.get('location')

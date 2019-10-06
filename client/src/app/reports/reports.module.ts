@@ -5,7 +5,8 @@ import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
 import { TranslateModule } from '@ngx-translate/core';
 
-import { NewReportsComponent, ReportListComponent } from '@reports/pages';
+import { NewReportsComponent } from '@reports/containers';
+import { ReportListComponent } from '@reports/pages';
 import { ReportsComponent } from '@reports/reports.component';
 import { ReportsRoutingModule } from '@reports/reports.routing';
 import { reportsEffects, reportsReducer } from '@reports/store';
