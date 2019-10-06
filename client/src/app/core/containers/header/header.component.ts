@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HTTPService } from '@shared/services';
 
 @Component({
   selector: 'core-header',
@@ -6,5 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  public ngOnInit(): void { }
+  public user: any;
+
+  constructor(private http: HTTPService) {}
+
+  public ngOnInit(): void {
+    this.http.get<any>('users').subscribe(value => {
+      // localStorage.setItem('user', value.data.user);
+      this.user = value.data.user;
+    });
+  }
 }

@@ -32,10 +32,7 @@ export interface IMapOptions {
 })
 export class SharedMapsComponent implements OnInit {
   @Input() public map: IMapOptions = this.getEmptyMap();
-  @Input() public addMarkers: boolean;
-
-  @ViewChild('matMenuTrigger', { static: true })
-  public menu: MatMenuTrigger;
+  @Input() public addMarkers: boolean = true;
 
   // public loading: boolean = true;
   private currentPosition: Partial<ILocation>;
