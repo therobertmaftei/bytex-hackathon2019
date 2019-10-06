@@ -1,14 +1,16 @@
 <div class="wrapper">
   <div class="container">
     <div class="logo">
-      <img src="assets/images/logo.svg" alt="Logo">
+      <shared-svg-icon icon="logo" [size]="'extra-large'"></shared-svg-icon>
+      <h1>{{ appName }}</h1>
     </div>
+
     <span class="group">
       <div class="graphic">
         <img src="assets/images/undraw-directions-x-53-j.svg" alt="Image" />
       </div>
       <div class="form" [formGroup]="form">
-        <h1>Login</h1>
+        <h1>Log in</h1>
         <span class="form-field">
           <label>E-mail</label>
           <mat-form-field appearance="outline">
@@ -22,7 +24,7 @@
           </mat-form-field>
         </span>
 
-        <button class="button" mat-button [disabled]="form.invalid" (click)="login($event)">LOGIN</button>
+        <button class="button" mat-button [disabled]="form.invalid" (click)="login($event)">LOG IN</button>
         <span class="already">
           Not a member?
           <a class="already--red" [routerLink]="['/register']">Register</a>

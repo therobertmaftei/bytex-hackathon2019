@@ -13,6 +13,17 @@ export const reducerActions: IReducer<IRecord<IState>> = {
     .setIn(['reports', 'loading'], false)
     .setIn(['reports', 'data'], fromJS(payload)),
 
+  [Actions.addReport.loading()]: (state: IRecord<IState>) => state
+    .setIn(['report', 'loading'], true)
+    .setIn(['report', 'data'], null),
+  [Actions.addReport.complete()]: (state: IRecord<IState>, payload: IReport) => state
+    .setIn(['report', 'loading'], false)
+    .setIn(['report', 'data'], fromJS(payload)),
+
+  [Actions.clearReport.event()]: (state: IRecord<IState>) => state
+    .setIn(['report', 'loading'], false)
+    .setIn(['report', 'data'], null),
+
   [Actions.geolocation.complete()]: (state: IRecord<IState>, payload: ILocationResponse) => state
     .set('location', fromJS(payload))
 };

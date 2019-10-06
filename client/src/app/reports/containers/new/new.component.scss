@@ -1,0 +1,103 @@
+@import 'global';
+
+@import 'global';
+
+:host {
+  @include not-last-child(bottom);
+  @extend %flex-column-center-x;
+  min-width: size(dimension, 650);
+  max-width: size(dimension, 1200);
+  position: relative;
+}
+
+.close {
+  align-self: flex-end;
+}
+
+.content {
+  @include not-last-child(bottom);
+
+  .form {
+    & > * {
+      padding: 0;
+    }
+  }
+}
+
+.buttons {
+  @include not-last-child;
+  @extend %flex-row-center-x;
+  margin-top: size(medium, 2);
+}
+
+.categories {
+  @include not-last-child();
+  @include not-last-child(bottom);
+}
+
+.dot {
+  $size: size(small, 4);
+  @include generate-sizes($size);
+  font-size: $size;
+  user-select: none;
+}
+
+
+
+.form {
+  @extend %flex-column;
+  max-width: size(dimension, 900);
+  width: 100%;
+
+  &.small > * {
+    @include not-last-child(bottom, false, size(medium));
+    padding-top: size(medium, 2);
+  }
+
+  &:not(.small) > * {
+    @include not-last-child(bottom, false, size(medium, 3));
+    padding-top: size(medium, 4);
+  }
+
+  &-field {
+    @extend %flex-row;
+    @include not-last-child;
+    @include fit-form-field;
+    align-items: baseline;
+
+    & > * {
+      @extend %flex-row;
+      flex-grow: 0;
+      flex-shrink: 0;
+    }
+
+    .field,
+    .group,
+    .upload {
+      @extend %flex-row;
+      @include not-last-child;
+      align-items: baseline;
+      width: 100%;
+    }
+
+    .group > * {
+      flex-basis: 50%;
+    }
+
+    // Upload file name
+    .upload > :nth-child(2) {
+      flex-grow: 1;
+    }
+
+    & > label,
+    .label,
+    .actions {
+      @include not-last-child;
+    }
+  }
+
+  &-buttons {
+    @extend %flex-row-center-x;
+    @include not-last-child;
+  }
+}

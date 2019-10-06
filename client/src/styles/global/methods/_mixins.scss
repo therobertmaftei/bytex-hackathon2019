@@ -61,3 +61,27 @@
   width: $size;
   height: $size;
 }
+
+// Forms
+/// Adds flex basis to label, input and action elements from a form field.
+/// * This must be included only inside of `.form-field` class or equivalent. *
+///
+/// @param {percentage} $base [50%]
+///   Input's base; label and actions containers will have the rest, divided equally.
+@mixin fit-form-field($base: 50%) {
+  $ends-base: (100% - $base) / 2;
+
+  & > label,
+  .label {
+    flex-basis: calc(#{$ends-base} - #{space-between-elements()});
+  }
+
+  // Input
+  & > :nth-child(2) {
+    flex-basis: $base;
+  }
+
+  .actions {
+    flex-basis: $ends-base;
+  }
+}

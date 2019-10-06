@@ -18,12 +18,7 @@ export abstract class ROUTES {
   };
 
   public static REPORTS: IRoute = {
-    url: 'reports',
-    children: {
-      ADD: {
-        url: 'add'
-      }
-    }
+    url: 'reports'
   };
 
   public static SMART: IRoute = {

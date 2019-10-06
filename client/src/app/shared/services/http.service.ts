@@ -16,22 +16,14 @@ export class HTTPService {
     return this.http.post<IRequest<T>>(
       this.buildEndpoint(endpoint, queryParams),
       body,
-      {
-        headers: new HttpHeaders({
-          Authorization: `Bearer ${localStorage.getItem('token')}`
-        })
-      }
+      this.getHeaders()
     );
   }
 
   public get<T>(endpoint: string, queryParams?: IQueryParam): Observable<IRequest<T>> {
     return this.http.get<IRequest<T>>(
       this.buildEndpoint(endpoint, queryParams),
-      {
-        headers: new HttpHeaders({
-          Authorization: `Bearer ${localStorage.getItem('token')}`
-        })
-      }
+      this.getHeaders()
     );
   }
 
@@ -39,22 +31,14 @@ export class HTTPService {
     return this.http.put<IRequest<T>>(
       this.buildEndpoint(endpoint, queryParams),
       body,
-      {
-        headers: new HttpHeaders({
-          Authorization: `Bearer ${localStorage.getItem('token')}`
-        })
-      }
-      );
+      this.getHeaders()
+    );
   }
 
   public delete<T>(endpoint: string, queryParams?: IQueryParam): Observable<IRequest<T>> {
     return this.http.delete<IRequest<T>>(
       this.buildEndpoint(endpoint, queryParams),
-      {
-        headers: new HttpHeaders({
-          Authorization: `Bearer ${localStorage.getItem('token')}`
-        })
-      }
+      this.getHeaders()
     );
   }
 
@@ -71,5 +55,13 @@ export class HTTPService {
       endpoint  = endpoint.slice(0, -1);
     }
     return endpoint;
+  }
+
+  private getHeaders(): { headers: HttpHeaders } {
+    return {
+      headers: new HttpHeaders({
+        Authorization: `Bearer ${localStorage.getItem('token')}`
+      })
+    };
   }
 }

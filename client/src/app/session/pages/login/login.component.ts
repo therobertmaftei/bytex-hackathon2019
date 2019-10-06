@@ -10,6 +10,7 @@ import { HTTPService } from '@shared/services';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent extends BaseComponent implements OnInit {
+  public readonly appName: string = 'city.ai';
   public form: FormGroup;
 
   constructor(

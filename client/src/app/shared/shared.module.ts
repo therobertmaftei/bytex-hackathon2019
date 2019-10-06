@@ -10,7 +10,7 @@ import {
   SharedMapsComponent,
   SvgIconComponent
 } from '@shared/components';
-import { BaseComponent } from '@shared/containers';
+import { BaseComponent, FormSectionComponent } from '@shared/containers';
 import { RoutePipe } from '@shared/pipes';
 import { HTTPService } from '@shared/services';
 import { UIModule } from '@ui/ui.module';
@@ -18,6 +18,7 @@ import { UIModule } from '@ui/ui.module';
 @NgModule({
   declarations: [
     BaseComponent,
+    FormSectionComponent,
     LoadingDotsComponent,
     RoutePipe,
     SharedMapsComponent,
@@ -39,6 +40,7 @@ import { UIModule } from '@ui/ui.module';
     BaseComponent,
     CommonModule,
     FormsModule,
+    FormSectionComponent,
     LoadingDotsComponent,
     ReactiveFormsModule,
     RoutePipe,
