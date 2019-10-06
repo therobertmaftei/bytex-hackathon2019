@@ -6,11 +6,11 @@ import { BaseComponent } from '@shared/containers';
 import { HTTPService } from '@shared/services';
 
 @Component({
-  selector: 'smart-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  selector: 'smart-parking',
+  templateUrl: './parking.component.html',
+  styleUrls: ['./parking.component.scss']
 })
-export class SmartHomeComponent extends BaseComponent implements OnInit {
+export class SmartParkingComponent extends BaseComponent implements OnInit {
   public user: any;
   public map: IMapOptions;
 
@@ -21,21 +21,21 @@ export class SmartHomeComponent extends BaseComponent implements OnInit {
   public ngOnInit(): void {
     super.ngOnInit();
 
-    this.http.get<any>('home').subscribe(value => {
-      const homes: IReport[] = value.data.homes;
-      if (!homes.length) {
+    this.http.get<any>('park').subscribe(value => {
+      const parks: IReport[] = value.data.parks;
+      if (!parks || !parks.length) {
         return;
       }
 
       this.map = {
         location: {
-          latitude: homes[0].location.lat,
-          longitude: homes[0].location.lng,
+          latitude: parks[0].location.lat,
+          longitude: parks[0].location.lng,
           zoom: 15
         },
-        markers: homes.map((item: any) => ({
+        markers: parks.map((item: any) => ({
           title: item.address,
-          details: item.state.connected ? 'Connected' : 'Disconnected',
+          details: `${item.usage.used}/${item.usage.total} used`,
           latitude: item.location.lat,
           longitude: item.location.lng
         } as IMarker))

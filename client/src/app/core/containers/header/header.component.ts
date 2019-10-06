@@ -32,6 +32,6 @@ export class HeaderComponent extends BaseComponent implements OnInit {
 
   public logout(): void {
     localStorage.removeItem('token');
-    this.router.navigate(['/login']);
+    this.router.navigate(['/landing']);
   }
 }

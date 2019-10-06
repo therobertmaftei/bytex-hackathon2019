@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { ROUTES } from '@core/constants';
-import { SmartDashboardComponent, SmartHomeComponent } from '@smart/pages';
+import { SmartCarsComponent, SmartDashboardComponent, SmartHomeComponent, SmartParkingComponent } from '@smart/pages';
 import { SmartComponent } from '@smart/smart.component';
 
 const routes: Routes = [
@@ -17,6 +17,14 @@ const routes: Routes = [
       {
         path: ROUTES.SMART.children.HOME.url,
         component: SmartHomeComponent
+      },
+      {
+        path: ROUTES.SMART.children.PARKING.url,
+        component: SmartParkingComponent
+      },
+      {
+        path: ROUTES.SMART.children.CAR.url,
+        component: SmartCarsComponent
       }
     ]
   }
