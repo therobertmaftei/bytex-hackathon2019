@@ -1,0 +1,43 @@
+@import 'global';
+
+@import 'global';
+
+:host {
+  @include not-last-child(bottom);
+  @extend %flex-column-center-x;
+  min-width: size(dimension, 650);
+  max-width: size(dimension, 1200);
+  position: relative;
+}
+
+.close {
+  align-self: flex-end;
+}
+
+.content {
+  @include not-last-child(bottom);
+
+  .form {
+    & > * {
+      padding: 0;
+    }
+  }
+}
+
+.buttons {
+  @include not-last-child;
+  @extend %flex-row-center-x;
+  margin-top: size(medium, 2);
+}
+
+.categories {
+  @include not-last-child();
+  @include not-last-child(bottom);
+}
+
+.dot {
+  $size: size(small, 4);
+  @include generate-sizes($size);
+  font-size: $size;
+  user-select: none;
+}

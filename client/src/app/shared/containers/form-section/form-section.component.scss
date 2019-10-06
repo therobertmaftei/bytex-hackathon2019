@@ -1,0 +1,38 @@
+@import 'global';
+
+:host {
+  @extend %flex-column;
+  width: 100%;
+}
+
+header {
+  @extend %flex-column-center-x;
+  margin-bottom: size(medium, 4);
+
+  & > * {
+    @include not-last-child(bottom, false, size(medium));
+    text-align: justify;
+    color: inherit;
+  }
+}
+
+main {
+  @extend %flex-column;
+  padding: 0 size(medium, 4);
+}
+
+::ng-deep {
+  main {
+    & > *,
+    .form-field,
+    .form-group > * {
+      &:not(:first-child) {
+        padding-top: size(small, 3);
+      }
+
+      &:not(:last-child) {
+        margin-bottom: size(small, 3);
+      }
+    }
+  }
+}
