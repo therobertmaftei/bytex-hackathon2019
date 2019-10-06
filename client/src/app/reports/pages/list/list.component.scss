@@ -1,0 +1,50 @@
+@import 'global';
+
+:host {
+  @extend %flex-row;
+  flex-grow: 1;
+  position: relative;
+}
+
+.list {
+  $padding: size(medium);
+  @include not-last-child(bottom);
+  flex-grow: 1;
+  padding: $padding;
+  background-color: color(white);
+  border-radius: size(dimension, 10);
+  overflow-y: auto;
+
+  .card {
+    @include not-last-child(bottom);
+    @extend %flex-column;
+
+    &:not(:last-child) {
+      $space: size(small, 4);
+      padding-bottom: $space;
+      margin-bottom: $space;
+      border-bottom: to-rem(1) solid color(primary-lighter-x);
+    }
+
+    header {
+      @extend %flex-row-center-y;
+      justify-content: space-between;
+
+      .title {
+        margin: 0;
+      }
+
+      img {
+        @include generate-sizes(size(medium, 2));
+        border-radius: 50%;
+      }
+    }
+  }
+
+  &-wrapper {
+    @include not-last-child(bottom, true, $padding);
+    @extend %flex-column;
+    padding: $padding;
+    flex-basis: 40%;
+  }
+}

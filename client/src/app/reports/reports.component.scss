@@ -1,0 +1,6 @@
+@import 'global';
+
+:host {
+  display: block;
+  height: calc(90% - #{size(large)});
+}

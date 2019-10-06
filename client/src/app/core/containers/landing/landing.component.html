@@ -1,0 +1,30 @@
+<header>
+  <a [routerLink]="'LANDING' | route"
+     queryParamsHandling="preserve"
+     [attr.aria-label]="appName">
+    <shared-svg-icon icon="logo" [size]="'extra-large'"></shared-svg-icon>
+    <h1>{{ appName }}</h1>
+  </a>
+
+  <div class="buttons">
+    <cd-button class="big">
+      <button [attr.aria-label]="'landing.landing.getStarted' | translate"
+              mat-raised-button
+              (click)="getStarted()"
+              color="accent">{{ 'landing.landing.getStarted' | translate | uppercase }}</button>
+    </cd-button>
+  </div>
+</header>
+
+<section class="screen-landing">
+  <div class="max-width">
+    <h2 class="description">{{ 'landing.landing.description' | translate }}</h2>
+    <cd-button class="rounded big">
+      <button [attr.aria-label]="'landing.landing.learnMore' | translate"
+              mat-raised-button
+              color="accent">{{ 'landing.landing.learnMore' | translate | uppercase }}</button>
+    </cd-button>
+  </div>
+
+  <img src="/assets/images/city.svg" class="city" alt="Buildings">
+</section>

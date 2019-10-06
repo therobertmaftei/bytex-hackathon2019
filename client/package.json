@@ -30,11 +30,6 @@
     "test:coverage": "jest --coverage",
     "lint": "ng lint --format=stylish"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run lint && npm run validate-i18n"
-    }
-  },
   "watch": {
     "parse-i18n": {
       "patterns": [

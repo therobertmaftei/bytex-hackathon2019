@@ -1,0 +1,6 @@
+@import 'global';
+
+:host {
+  @extend %flex-row;
+  height: 100vh;
+}

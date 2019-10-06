@@ -1,0 +1,15 @@
+@import 'global';
+
+:host {
+  @include not-last-child(right, true, size(medium, 2));
+  @extend %flex-row;
+  width: 100%;
+}
+
+main {
+  @include not-last-child(bottom, true, size(large));
+  padding: size(medium, 4) size(medium, 4) size(medium, 4) 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}

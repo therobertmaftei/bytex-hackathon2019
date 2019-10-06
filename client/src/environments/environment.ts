@@ -6,8 +6,7 @@ export const environment = {
   hmr: false,
   production: false,
   server: {
-    ip: '5.2.188.59',
-    port: 3001
+    ip: 'http://api.heck.ro'
   }
 };
 

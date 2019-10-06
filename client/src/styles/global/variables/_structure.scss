@@ -95,17 +95,18 @@
     @error 'Size option not available. Option must be one of these: #{$available-options}';
   }
 
-  $size: positive-number($size); // Validate size.
-
   @if $option == small or $option == medium or $option == large {
     @return call(get-function($option), $size);
   } @else if $option == dimension {
+    $size: positive-number($size); // Validate size.
+
     @if $size % 10 != 0 {
       @error 'Only multiples of 10 accepted.';
     }
 
     @return to-rem($size);
   } @else {
+    $size: positive-number($size); // Validate size.
     @return to-rem($size);
   }
 }

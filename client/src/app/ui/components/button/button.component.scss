@@ -8,11 +8,53 @@
     display: block;
   }
 
+  &.rounded {
+    ::ng-deep {
+      .mat {
+        &-button,
+        &-flat-button,
+        &-raised-button,
+        &-stroked-button {
+          border-radius: size(dimension, 30);
+        }
+      }
+    }
+  }
+
   &.small {
     ::ng-deep {
       .mat {
         &-icon-button {
           @include generate-sizes(size(medium));
+        }
+      }
+    }
+  }
+
+  &.big {
+    ::ng-deep {
+      .mat {
+        &-button,
+        &-flat-button,
+        &-raised-button,
+        &-stroked-button {
+          min-width: size(dimension, 150);
+          min-height: size(dimension, 60);
+          padding: size(small) size(small, 4);
+          font-size: size(font, 20);
+        }
+      }
+    }
+  }
+
+  &.full {
+    ::ng-deep {
+      .mat {
+        &-button,
+        &-flat-button,
+        &-raised-button,
+        &-stroked-button {
+          width: 100%;
         }
       }
     }
@@ -30,6 +72,8 @@
     &-raised-button,
     &-stroked-button {
       min-width: 100px;
+      font-weight: 600;
+      border-radius: size(dimension, 10);
     }
 
     &-icon-button {

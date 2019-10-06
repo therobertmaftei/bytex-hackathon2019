@@ -3,6 +3,7 @@ html {
 }
 
 body {
+  font: normal size(font, 14)/size(font, 20) $font-family;
   color: black;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -38,4 +39,28 @@ h4, .h4 {
 
 h5, .h5 {
   font-weight: 700;
+}
+
+a {
+  transition: get-transition();
+  user-select: none;
+  text-decoration: none;
+  color: color(primary);
+}
+
+// Inputs
+.required {
+  &--before::before,
+  &::after {
+    color: color(critical);
+    content: '*';
+  }
+
+  &--before::before {
+    margin-right: size(small);
+  }
+
+  &::after {
+    margin-left: size(small);
+  }
 }

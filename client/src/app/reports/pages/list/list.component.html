@@ -1,0 +1,38 @@
+<shared-loading-dots class="full-content" *ngIf="isLoading; else notLoading"></shared-loading-dots>
+<ng-template #notLoading>
+  <section class="list-wrapper">
+    <header>
+      <cd-button class="rounded">
+        <button [attr.aria-label]="'reports.reports.report' | translate"
+                (click)="addReport()"
+                color="primary"
+                mat-flat-button
+                type="button">
+          <mat-icon>add</mat-icon>
+          <span>{{ 'reports.reports.report' | translate | uppercase }}</span>
+        </button>
+      </cd-button>
+
+
+      <
+      <cd-checkbox>
+        <mat-checkbox [attr.aria-label]="'' | translate"
+                      formControlName="useNAT">
+          {{ 'common.cto_use' | translate }}
+        </mat-checkbox>
+      </cd-checkbox>
+    </header>
+
+    <div class="list">
+      <div class="card" *ngFor="let report of reports">
+        <header>
+          <h4 class="title">{{ report.title | titlecase }}</h4>
+          <img [src]="report.user?.profilePicture" [alt]="report.user?.firstname">
+        </header>
+
+        <main>{{ report.description | titlecase }}</main>
+      </div>
+    </div>
+  </section>
+  <shared-maps [map]="map"></shared-maps>
+</ng-template>

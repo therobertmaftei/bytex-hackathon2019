@@ -1,0 +1,24 @@
+@import 'global';
+
+:host {
+  @include not-last-child(bottom);
+  @extend %flex-column-center-x;
+  min-width: size(dimension, 650);
+  max-width: size(dimension, 1200);
+}
+
+.close {
+  align-self: flex-end;
+}
+
+.content {
+  @include not-last-child(bottom);
+  padding: 0 size(medium);
+  text-align: center;
+}
+
+.buttons {
+  @include not-last-child;
+  @extend %flex-row-center-x;
+  margin-top: size(medium, 2);
+}

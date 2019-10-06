@@ -5,16 +5,23 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonToggleModule, MatMenuModule, MatSnackBar } from '@angular/material';
 import { TranslateModule } from '@ngx-translate/core';
 
-import { SharedMapsComponent } from '@shared/components';
+import {
+  LoadingDotsComponent,
+  SharedMapsComponent,
+  SvgIconComponent
+} from '@shared/components';
 import { BaseComponent } from '@shared/containers';
 import { RoutePipe } from '@shared/pipes';
+import { HTTPService } from '@shared/services';
 import { UIModule } from '@ui/ui.module';
 
 @NgModule({
   declarations: [
     BaseComponent,
+    LoadingDotsComponent,
     RoutePipe,
-    SharedMapsComponent
+    SharedMapsComponent,
+    SvgIconComponent
   ],
   imports: [
     AgmCoreModule.forRoot({
@@ -32,13 +39,16 @@ import { UIModule } from '@ui/ui.module';
     BaseComponent,
     CommonModule,
     FormsModule,
+    LoadingDotsComponent,
     ReactiveFormsModule,
     RoutePipe,
     SharedMapsComponent,
+    SvgIconComponent,
     UIModule
   ],
   providers: [
-    MatSnackBar
+    MatSnackBar,
+    HTTPService
   ]
 })
 export class SharedModule { }
