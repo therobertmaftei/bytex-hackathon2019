@@ -7,8 +7,8 @@ const reportSchema = new Schema({
   description: {
     type: String,
   },
-  categories: {
-    type: Array,
+  category: {
+    type: String,
   },
   userId: {
     type: String,
@@ -18,9 +18,11 @@ const reportSchema = new Schema({
   },
   createdAt: {
     type: Date,
+    default: new Date().toISOString(),
   },
   updatedAt: {
     type: Date,
+    default: new Date().toISOString(),
   },
 });
 

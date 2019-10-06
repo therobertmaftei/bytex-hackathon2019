@@ -8,6 +8,6 @@ enum ActionsEnum {
 }
 
 export const Actions = {
-  getReports: new ActionCreator<never, ILocationResponse, IReport, any>(ActionsEnum.GET_REPORTS),
+  getReports: new ActionCreator<never, any, IReport, any>(ActionsEnum.GET_REPORTS),
   geolocation: new ActionCreator<never, never, Coordinates>(ActionsEnum.GEOLOCATION)
 };

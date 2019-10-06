@@ -9,7 +9,7 @@
   <div class="buttons">
     <cd-button class="big">
       <button [attr.aria-label]="'landing.landing.getStarted' | translate"
-              mat-raised-button
+              mat-flat-button
               (click)="getStarted()"
               color="accent">{{ 'landing.landing.getStarted' | translate | uppercase }}</button>
     </cd-button>
@@ -21,7 +21,7 @@
     <h2 class="description">{{ 'landing.landing.description' | translate }}</h2>
     <cd-button class="rounded big">
       <button [attr.aria-label]="'landing.landing.learnMore' | translate"
-              mat-raised-button
+              mat-flat-button
               color="accent">{{ 'landing.landing.learnMore' | translate | uppercase }}</button>
     </cd-button>
   </div>

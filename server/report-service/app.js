@@ -101,4 +101,4 @@ app.use((error, req, res, next) => {
   return res.status(HttpStatus.INTERNAL_SERVER_ERROR).send({ error });
 });
 
-app.listen(PORT, () => console.log(`User service is listening on ${PORT}`));
+app.listen(PORT, () => console.log(`Report service is listening on ${PORT}`));

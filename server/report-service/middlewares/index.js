@@ -96,3 +96,16 @@ exports.checkLocation = () => {
     return next()
   };
 };
+
+exports.checkAdmin = () => {
+  return (req, res, next) => {
+    if (!req.user.admin) {
+      return res.status(HttpStatus.FORBIDDEN).json({
+        success: false,
+        message: 'You must have an admin token',
+      });
+    }
+    
+    return next();
+  };
+};

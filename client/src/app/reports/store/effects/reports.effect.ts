@@ -11,13 +11,15 @@ import { Actions as ReportsActions } from '../actions';
 @Injectable()
 export class ReportsEffect {
   @Effect()
-  public reports = this.actions$.pipe(
+  public getAll = this.actions$.pipe(
     ofType(ReportsActions.getReports.loading()),
     mergeMap((action: any) => this.api.get<{ reports: IReport }>('reports', action.payload).pipe(
       map((response: IRequest<{ reports: IReport }>) => ReportsActions.getReports.dispatchComplete(response.data.reports)),
       catchError((errors: any) => of(ReportsActions.getReports.dispatchFailed(errors)))
     ))
   );
+
+
 
   constructor(
     private actions$: Actions,

@@ -13,26 +13,43 @@
         </button>
       </cd-button>
 
-
-      <
-      <cd-checkbox>
-        <mat-checkbox [attr.aria-label]="'' | translate"
-                      formControlName="useNAT">
-          {{ 'common.cto_use' | translate }}
-        </mat-checkbox>
-      </cd-checkbox>
+      <cd-radio>
+        <mat-radio-group class="categories" color="primary" [formControl]="categories">
+          <mat-radio-button *ngFor="let category of categoriesList" [value]="category">
+            <mat-icon class="dot" [class]="category">fiber_manual_record</mat-icon>
+          </mat-radio-button>
+        </mat-radio-group>
+      </cd-radio>
     </header>
 
     <div class="list">
       <div class="card" *ngFor="let report of reports">
         <header>
-          <h4 class="title">{{ report.title | titlecase }}</h4>
+          <div>
+            <h4 class="title">{{ report.title | titlecase }}</h4>
+            <mat-icon class="dot" [class]="report.category">fiber_manual_record</mat-icon>
+          </div>
           <img [src]="report.user?.profilePicture" [alt]="report.user?.firstname">
         </header>
 
         <main>{{ report.description | titlecase }}</main>
       </div>
     </div>
+
+    <footer>
+      <span>
+        <mat-icon class="dot critical">fiber_manual_record</mat-icon>
+        <span> - {{ 'reports.reports.critical' | translate }}</span>
+      </span>
+      <span>
+        <mat-icon class="dot warning">fiber_manual_record</mat-icon>
+        <span> - {{ 'reports.reports.warning' | translate }}</span>
+      </span>
+      <span>
+        <mat-icon class="dot info">fiber_manual_record</mat-icon>
+        <span> - {{ 'reports.reports.info' | translate }}</span>
+      </span>
+    </footer>
   </section>
   <shared-maps [map]="map"></shared-maps>
 </ng-template>
