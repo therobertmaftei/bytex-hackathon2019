@@ -85,14 +85,10 @@ exports.register = async (req, res) => {
       ACL: 'public-read',
     }).promise();
 
-    const now = new Date().toISOString();
-
     const user = await req.db.User.create({
       ...req.body,
       password,
       profilePicture: profile.Location,
-      createdAt: now,
-      updatedAt: now,
     });
     delete user._doc.password;
 

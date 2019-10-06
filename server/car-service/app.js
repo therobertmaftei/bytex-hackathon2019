@@ -22,7 +22,6 @@ const {
   setDatabase,
   requireAuth,
   setTransporter,
-  checkLocation
 } = require('./middlewares');
 const models = require('./models');
 const router = require('./routes');
@@ -50,7 +49,7 @@ const logStream = rfs('access_logs.log', {
   path: path.join(__dirname, 'logs', 'access'),
 });
 
-const PORT = process.env.NODE_ENV === 'prod' ? 80 : 3001;
+const PORT = process.env.NODE_ENV === 'prod' ? 80 : 3003;
 const config = dotenv.config({
   path: path.join(__dirname, 'vars', `${process.env.NODE_ENV}.env`),
 }).parsed;
@@ -85,8 +84,7 @@ app.use(setConfig(config));
 app.use(setDatabase(models));
 app.use(setTransporter(transporter));
 app.use(requireAuth());
-app.use(checkLocation())
-app.use('/reports', router);
+app.use('/car', router);
 
 // 404
 app.use((req, res, next) => {
@@ -101,4 +99,4 @@ app.use((error, req, res, next) => {
   return res.status(HttpStatus.INTERNAL_SERVER_ERROR).send({ error });
 });
 
-app.listen(PORT, () => console.log(`Report service is listening on ${PORT}`));
+app.listen(PORT, () => console.log(`Car service is listening on ${PORT}`));

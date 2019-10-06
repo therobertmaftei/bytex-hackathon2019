@@ -11,7 +11,7 @@ exports.getReports = async (req, res) => {
     const { category, user } = req.query;
 
     if (category) {
-      filters.categories = category;
+      filters.category = category;
     }
 
     if (user) {
@@ -23,14 +23,16 @@ exports.getReports = async (req, res) => {
 
     for (let report of reports) {
       const user = await req.db.User.findOne({ _id: ObjectId(report.userId) });
-      delete user._doc.password;
+      if (user) {
+        delete user._doc.password;
 
-      combinedReports.push({
-        ...report._doc,
-        user: {
-          ...user._doc,
-        },
-      });
+        combinedReports.push({
+          ...report._doc,
+          user: {
+            ...user._doc,
+          },
+        });
+      }
     }
 
     return res.status(HttpStatus.OK).json({
@@ -75,10 +77,10 @@ exports.getReport = async (req, res) => {
       },
     });
   } catch (error) {
-    req.log.error(`Unable get reports -> ${error}`);
+    req.log.error(`Unable get report -> ${error}`);
     return res.status(HttpStatus.INTERNAL_SERVER_ERROR).json({
       success: false,
-      message: [`Unable get reports`],
+      message: [`Unable get report`],
     });
   }
 };
@@ -92,10 +94,10 @@ exports.deleteReport = async (req, res) => {
       success: true,
     });
   } catch (error) {
-    req.log.error(`Unable get reports -> ${error}`);
+    req.log.error(`Unable delete reports -> ${error}`);
     return res.status(HttpStatus.INTERNAL_SERVER_ERROR).json({
       success: false,
-      message: [`Unable get reports`],
+      message: [`Unable delete reports`],
     });
   }
 };
@@ -103,7 +105,6 @@ exports.deleteReport = async (req, res) => {
 exports.createReport = async (req, res) => {
   try {
     const { lat, lng } = req.query;
-    const now = new Date().toISOString();
     const report = await req.db.Report.create({
       ...req.body,
       userId: req.user[idClaim],
@@ -111,8 +112,6 @@ exports.createReport = async (req, res) => {
         lat: parseFloat(lat),
         lng: parseFloat(lng),
       },
-      createdAt: now,
-      updatedAt: now,
     });
 
     return res.status(HttpStatus.CREATED).json({
@@ -122,10 +121,10 @@ exports.createReport = async (req, res) => {
       },
     });
   } catch (error) {
-    req.log.error(`Unable get reports -> ${error}`);
+    req.log.error(`Unable create reports -> ${error}`);
     return res.status(HttpStatus.INTERNAL_SERVER_ERROR).json({
       success: false,
-      message: [`Unable get reports`],
+      message: [`Unable create reports`],
     });
   }
 };

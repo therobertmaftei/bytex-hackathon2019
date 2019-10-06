@@ -1,20 +1,18 @@
 const { Schema, model } = require('mongoose');
 
-const reportSchema = new Schema({
-  title: {
-    type: String,
-  },
-  description: {
-    type: String,
-  },
-  category: {
-    type: String,
-  },
-  userId: {
+const parkSchema = new Schema({
+  address: {
     type: String,
   },
   location: {
-    type: Object
+    type: Object,
+  },
+  usage: {
+    type: Object,
+    default: {
+      total: 100,
+      used: 0,
+    },
   },
   createdAt: {
     type: Date,
@@ -26,4 +24,4 @@ const reportSchema = new Schema({
   },
 });
 
-module.exports = model('reports', reportSchema);
+module.exports = model('parks', parkSchema);

@@ -17,11 +17,13 @@ const userSchema = new Schema({
     type: String,
   },
   createdAt: {
-    type: Date
+    type: Date,
+    default: new Date().toISOString(),
   },
   updatedAt: {
-    type: Date
-  }
+    type: Date,
+    default: new Date().toISOString(),
+  },
 });
 
 module.exports = model('users', userSchema);
